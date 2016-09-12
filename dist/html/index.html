@@ -181,9 +181,9 @@
 			<div class="sys-title title-deg">
 				<div class="tit-name">店铺入驻数量：</div>
 				<div class="tit-date">
-					<input id="_sDate" type="text" class="tit-date-input" placeholder="日期" onclick="var _d = new Date(), $s = $('#_eDate'), _min='1990-1-1',_max=$s.val()||_d.getFullYear()+'-'+(_d.getMonth()+1);WdatePicker({minDate:_min,maxDate:_max})">
+					<input id="_sDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $s = $('#_eDate');WdatePicker({minDate:'1990-1-1',maxDate:$s.val()||_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})">
 					<span>到</span>
-					<input id="_eDate" type="text" class="tit-date-input" placeholder="日期" onclick="var _d = new Date(), $s = $('#_sDate'), _min=$s.val()||'1990-1-1',_max=_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate();WdatePicker({minDate:_min,maxDate:_max})" >
+					<input id="_eDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $e = $('#_sDate');WdatePicker({minDate:$e.val(),maxDate:_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})" >
 					<input type="button" value="确定" class="tit-date-button">
 				</div>
 				<div class="tit-select-wrap">
