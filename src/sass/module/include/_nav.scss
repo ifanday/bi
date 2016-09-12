@@ -1,0 +1,36 @@
+$hover: #274585;
+$navH: 70px;
+.nav{	
+	height:$navH;
+	background:$titBg;
+	.main{
+		margin:0 auto;
+		width:$width;
+	}
+
+	.logo{
+		position:absolute;
+		top:0;
+		right:100%;
+		margin-right:-13px;
+	}
+
+	.links{
+		padding-left:60px;
+		height:100%;
+		font-size:0;
+
+		a{
+			display:inline-block;
+			width:170px;
+			font:18px/#{$navH} "microsoft yahei";
+			color:#fff;
+			text-align:center;
+
+			&:hover,
+			&.current{
+				background-color:$hover;
+			}
+		}
+	}
+}

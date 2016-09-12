@@ -1,0 +1,333 @@
+$width: 1230px;
+
+%clearfix:after{
+	content:"";
+	display:block;
+	overflow:hidden;
+	height:0;
+	clear:both;
+}
+%bgicon{
+	background:url(./../images/base/icon.png) no-repeat;
+}
+.mb-10{
+	margin-bottom:10px;
+}
+body{
+	background-color:$bodyBg;
+}
+
+.wrapper{
+	margin:0 auto;
+	width:$width;
+	box-sizing:border-box;
+}
+
+.main{
+	position:relative;
+	@extend %clearfix;
+}
+
+.wrapper{
+	padding:54px 17px;
+	background-color:#fff;
+}
+
+/* 通用标题 */
+.sys-title{
+	$h: 65px;
+	height:$h;
+	border:1px solid $titBg;
+	background-color:$titleBg;
+	border-radius:$bdrs;
+	font:18px/#{$h} "microsoft yahei";
+	color:#fff;
+
+	&.title-deg{
+		border-radius:$bdrs $bdrs 0 0;
+	}
+
+	.tit-name{
+		padding:0 10px;
+		float:left;
+		height:100%;
+		min-width:160px;
+		text-align:center;
+		background-color:$titBg;
+		border-radius: $bdrs*0.8 0 0 $bdrs*0.8;
+		box-sizing:border-box;
+	}
+
+	.tit-name,
+	.active{
+		color:#fff;
+	}
+
+	.tit-setdata{
+		float:left;
+		height:100%;
+
+		a{
+			display:inline-block;
+			margin:0 4px 0 12px;
+			width:117px;
+			height:37px;
+			line-height:37px;
+			color:#222;
+			text-align:center;			
+			border-radius:15px;
+		}
+
+		.active{
+			color:#fff;
+			background:$titBg;
+		}
+	}
+
+	.tit-date{
+		float:left;
+		height:100%;
+		padding-left:14px;
+
+		.tit-date-input{
+			width:144px;
+			height:44px;
+			border:none;
+			text-align:center;
+			font:18px/44px "microsoft yahei";
+			background:#fff;
+			border-radius:3px;
+		}
+
+		.tit-date-button{
+			position:relative;
+			top:-3px;
+			margin-left:15px;
+			width:108px;
+			height:44px;
+			border:none;
+			font-size:18px;
+			color:#fff;
+			background-color:#ff8022;
+			border-radius:3px;
+		}
+
+
+
+		span{
+			display:inline-block;
+			width:40px;
+			color:#565656;
+			font-size:18px;
+			text-align:center;
+		}
+	}
+
+	.tit-select-wrap{
+		float:right;
+		margin-right:70px;
+		height:100%;
+
+		.tit-select{
+			margin:8px 0 0 30px;
+		}
+	}
+}
+
+
+/* 重影框架 */
+.overlap{
+	position:relative;
+	margin-top:35px;
+	border:1px solid $titBg;
+	border-bottom-color:$bdbc;
+	border-radius:$bdrs;
+
+	.sys-title{
+		position:relative;
+		z-index:2;
+		border-width:0 0 1px;
+		box-shadow:0 5px 8px rgba(#000, .15);
+
+		.tit-name{
+			border-radius: $bdrs*0.8 0 0 0;
+		}
+	}
+
+	.overlap-cont{
+		position:relative;
+		z-index:1;
+		background-color:#fff;
+		border-radius:0 0 $bdrs $bdrs;
+
+		.condition{
+			padding:10px 30px;
+			font:18px/45px "microsoft yahei";
+			@extend %flex;
+
+			.name{
+				width:90px;
+			}
+			.checkboxs{
+				width:1020px;			
+	
+				input[type="checkbox"]{
+					display:none;
+
+					&:checked + span:before{
+						background-position:0px -39px;
+					}
+				}
+
+				span{
+					padding-left:30px;
+					display:inline-block;
+					position:relative;
+					width:135px;
+
+					&::selection{
+						background-color:transparent;
+					}				
+
+					&:before{
+						content:"";
+						position:absolute;
+						left:0;
+						top:50%;
+						width:21px;
+						height:22px;
+						transform:translateY(-50%);
+						@extend %bgicon;
+						background-position:-21px -39px;
+					}
+				}
+			}
+		}
+
+		.overlap-echarts{
+			height:365px;
+
+			&.h385{
+				height:385px;
+			}
+
+			&.h390{
+				height:390px;
+			}
+
+		}
+
+		.echarts-bg{
+			border-radius:0 0 $bdrs*0.8 $bdrs*0.8;
+			background-color:$echartsbg;
+
+			&.echarts-bg-light{
+				background-color:$titBg;
+			}
+		}
+		
+	}
+
+	&:after{
+		content:"";
+		position:absolute;
+		left:-1px;
+		bottom:0;
+		right:-1px;
+		margin-bottom:-10px;
+		height:16px;
+		background-color:$drak;
+		border-radius:0 0 $bdrs $bdrs;
+	}
+}
+
+// 下拉框
+.tit-select{
+	position:relative;
+	display:inline-block;
+	width:165px;
+	height:44px;
+	font:18px/44px "microsoft yahei";
+	background-color:#fff;
+	border-radius:3px;
+
+	&:after,
+	&:before{
+		content:"";
+		position:absolute;
+	}
+
+	&:before{
+		top:7px;
+		bottom:7px;
+		right:46px;
+		width:1px;
+		background-color:#aeaeae;
+	}
+
+	&:after{
+		right:15px;
+		top:50%;
+		margin-top:-5px;
+		border:solid transparent;
+		border-width:12px 9px;
+		border-top-color:#595959;
+		border-radius:3px;
+		transition:all .5s;
+	}
+
+	&.open{
+		.tit-select-option{
+			display:block;
+		}
+
+		&:after{
+			border-top-color:transparent;
+			border-bottom-color:#595959;
+			top:0;
+			margin-top:5px;
+		}
+	}
+
+	.tit-select-name{
+		padding-left:18px;
+		width:110px;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		color:#282828;
+		overflow:hidden;
+
+		&::selection{
+			background-color:transparent;
+		}
+	}
+
+	.tit-select-option{
+		display:none;
+		position:absolute;
+		top:100%;
+		left:0;
+		right:0;
+		padding:5px 0;
+		background-color:#fff;
+		border-radius:0 0 3px 3px;
+
+		div{
+			padding-left:18px;
+			height:35px;
+			font:14px/35px "microsoft yahei";
+			border-top:1px solid #EEE;
+			color:#333;
+			cursor:pointer;
+
+			&:hover{
+				color:#fff;
+				background-color:#ff8022;
+			}
+		}
+
+		.active{
+			color:#ff8022;
+		}
+	}
+}

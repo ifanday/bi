@@ -1,0 +1,48 @@
+/*
+ *	author: cuke,
+ *	date: now,
+ *	desc: reset the browser css styles
+ */
+body{
+	font:12px/1.5 "microsoft yahei";
+}
+body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, input{
+	margin:0;
+}
+ul, ol, input, button{
+	padding:0;
+}
+ul, ol{
+	list-style:none;
+}
+img{
+	border:none;
+	vertical-align:top;
+}
+h1, h2, h3, h4, h5, h6{
+	font-size:100%;
+}
+a{
+	color:#333;
+	text-decoration:none;
+}
+table{
+	width:100%;
+	border-spacing:0;
+    table-layout:fixed; /* 让 td 超出部分可以用省略号 */
+	border-collapse:collapse;
+}
+input, textarea{
+	outline:none;
+	border:1px solid #E5E5E5;
+}
+b, strong{
+	font-weight:normal;
+}
+object, img{
+	border:none;
+	display:inline-block; /* 狐下无路径会设置成 inline */
+}
+em, i{
+	font-style:normal; /* 默认斜体 */	
+}
