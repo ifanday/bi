@@ -127,6 +127,10 @@ body{
 		margin-right:70px;
 		height:100%;
 
+		&.fl{
+			float:left;
+		}
+
 		.tit-select{
 			margin:8px 0 0 30px;
 		}

@@ -22,12 +22,12 @@ var classify = echarts.init(document.querySelector('#classify-echarts')),
                 color: '#666'
             }
         },*/
-        /*legend: {
+        legend: {
             orient: 'horizontal',
             x: 'center',
-            bottom: '80',
+            bottom: 0,
             data: ['服装', '家电', '食品', '电子产品', '其他']
-        },*/
+        },
         series: [{
             name: '访问来源',
             type: 'pie',
@@ -486,8 +486,3 @@ area.setOption(areaOption);
 shopNum.setOption(shopNumOption);
 
 level.setOption(levelOption);
-
-oS.setDate = function(){
-	var _v = this.innerHTML;
-	alert(_v);
-}

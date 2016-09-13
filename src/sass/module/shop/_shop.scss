@@ -36,9 +36,6 @@
 .classify-datalist{
 	float:right;
 	width:600px;
-	overflow:hidden;
-	border:1px solid $titBg;
-	border-radius:$bdrs;
 	max-height:474px;
 	overflow-y:auto;
 }
@@ -124,7 +121,7 @@
 
 #classify-echarts{
 	width:400px;
-	height:400px;
+	height:460px;
 	margin:0 auto;
 }
 

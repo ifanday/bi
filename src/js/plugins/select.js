@@ -1,4 +1,5 @@
-+function(w, d){
+
+;+function(w, d){
 	var Select = function(option){
 		this.option = {
 			select: '.tit-select',

@@ -1,4 +1,3 @@
-
 ;+function(w, d){
 	// 复选框
 	var checkedWrap = d.querySelector('.checkboxs'),
@@ -549,9 +548,3 @@ addMember.setOption(addMemberOption);
 
 // 在线商品
 onlineShop.setOption(onlineShopOption);
-
-
-oS.setDate = function(){
-	var _v = this.innerHTML;
-	alert(_v);
-}
