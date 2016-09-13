@@ -1,0 +1,381 @@
+@@include('./include/_header.html', {
+	"title": "店铺分析"
+})
+@@include('./include/_nav.html', {
+	"index": "",
+	"shop": "current",
+	"member": "",
+	"operate": "",
+	"setting": "",
+	"help": ""
+})
+<div class="wrapper">
+	<div class="main">
+		<!-- 按类目 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop icon-1">按类目</div>
+			</div>
+			<div class="overlap-cont classify-pd">
+				<div class="classify-echarts">
+					<div id="classify-echarts"></div>
+					<div class="classify-icon">
+						<span class="icon-i1">服装</span>
+						<span class="icon-i2">家电</span>
+						<span class="icon-i3">食品</span>
+						<span class="icon-i4">电子产品</span>
+						<span class="icon-i5">其他</span>
+					</div>
+				</div>
+				<div class="table-wrap classify-datalist">
+					<table>
+						<thead>
+							<tr>
+								<th width="33%">类目</th>
+								<th width="33%">数量</th>
+								<th>占比</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>服装</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>家电</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>食品</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>电子产品</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>其他</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- 按地域 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop icon-2">按地域</div>
+			</div>
+			<div class="overlap-cont classify-pd">
+				<div class="classify-echarts">
+					<div id="area-echarts"></div>
+				</div>
+				<div class="table-wrap classify-datalist">
+					<table>
+						<thead>
+							<tr>
+								<th width="33%">地域</th>
+								<th width="33%">数量</th>
+								<th>占比</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>合肥</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>北京</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>上海</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>其他</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>其他</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- 店铺入驻数量 -->
+		<div class="overlap flow-deal">
+			<div class="sys-title title-deg">
+				<div class="tit-name">店铺入驻数量</div>
+				<div class="tit-date">
+					<input id="_sDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $s = $('#_eDate');WdatePicker({minDate:'1990-1-1',maxDate:$s.val()||_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})">
+					<span>到</span>
+					<input id="_eDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $e = $('#_sDate');WdatePicker({minDate:$e.val(),maxDate:_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})" >
+					<input type="button" value="确定" class="tit-date-button">
+				</div>
+				<div class="tit-select-wrap">
+					<div class="tit-select">
+						<div class="tit-select-name">所有类目</div>
+						<div class="tit-select-option">
+							<div class="active">所有类目</div>
+							<div>2</div>
+							<div>3</div>
+							<div>4</div>
+						</div>
+					</div>
+					<div class="tit-select">
+						<div class="tit-select-name">所有地域</div>
+						<div class="tit-select-option">
+							<div class="active">所有地域</div>
+							<div>合肥</div>
+							<div>3</div>
+							<div>4</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+							<div>5</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="overlap-cont">
+				<div class="overlap-echarts echarts-bg h385">
+					<div id="shop-echarts"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 店铺层级 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop icon-3">店铺层级</div>
+			</div>
+			<div class="overlap-cont level-pd">
+				<div id="level-echarts"></div>
+			</div>
+		</div>
+
+		<!-- 店铺排名 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name">店铺排名</div>
+				<div class="tit-setdata">				
+					<a class="active" href="javascript:;">全部</a>
+					<a href="javascript:;">昨日</a>
+					<a href="javascript:;">近7日</a>
+					<a href="javascript:;">近30日</a>
+				</div>
+			</div>
+			<div class="overlap-cont table-pd">
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th width="10%">排名</th>
+								<th width="14.9%">店铺名称</th>
+								<th width="10%">类目</th>
+								<th width="12.1%">支付金额</th>
+								<th width="14.4%">成交商品种数</th>
+								<th width="12.6%">支付转化率</th>
+								<th width="12.2%">客单价</th>
+								<th>店铺访客数</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>名称1</td>
+								<td>电子产品</td>
+								<td>23123</td>
+								<td>5</td>
+								<td>50%</td>
+								<td>78</td>
+								<td>9999</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="m-pages">
+					<span class="peve-all">首页</span>
+					<span class="peve">&lt; 上一页</span>
+					<span class="current">1</span>
+					<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a>
+					<span>...</span>
+					<a href="javascript:;" class="peve">下一页 &gt;</a>
+					<a href="javascript:;" class="peve-all">尾页</a>
+					<div class="msg">共10页</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+@@include('./include/_code.html')
+<script src="../js/plugins/china.js"></script>
+<script src="../js/plugins/select.js"></script>
+<script src="../js/plugins/date/WdatePicker.js"></script>
+<script src="../js/shop.js"></script>
+@@include('./include/_footer.html')

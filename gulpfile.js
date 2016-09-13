@@ -59,10 +59,10 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./dist/html/'));
 });
 gulp.task('sprite', function() {
-    return gulp.src('./src/images/icon/*.png')
+    return gulp.src('./src/images/shop/*.png')
     	.pipe(spritesmith({
-	        imgName: 'icon.png',
-	        cssName: 'icon.css'
+	        imgName: 'shop.png',
+	        cssName: 'shop.css'
 	    }))
 	    .pipe(gulp.dest('./dist/images/base/'))
 	    .pipe(notify({ message: 'sprite task complete' }));;
@@ -94,7 +94,7 @@ gulp.task('html', function (){
 gulp.task('watch', function() {
     //return gulp.watch(['./sass/workbench.scss'], ['sass']);
 	gulp.watch('./dist/css/*.css', ['html']); //监控css文件
-    gulp.watch('./dist/js/*.js', ['html']);  //监控js文件
+    gulp.watch(['./dist/js/*.js', './dist/js/plugins/*.js'], ['html']);  //监控js文件
     gulp.watch(['./dist/html/*.html'], ['html']);  //监控html文件
     gulp.watch(['./src/html/*.html', './src/html/*/*.html'], ['fileinclude'])
     gulp.watch(['./src/sass/*.scss', './src/sass/*/*.scss', './src/sass/*/*/*.scss'], ['sass']);
