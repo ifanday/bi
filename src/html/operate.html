@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>首页</title>
-	<link rel="stylesheet" href="../css/main.min.css">
-</head>
-<body>
-<div class="nav">
-	<div class="main">
-		<div class="logo"><a href="index.html"><img src="../images/common/logo.png" alt="logo"></a></div>
-		<div class="links">
-			<a class="current" href="index.html">首　页</a>
-			<a class="" href="shop.html">店铺分析</a>
-			<a class="" href="member.html">会员分析</a>
-			<a class="" href="operate.html">运营分析</a>
-			<a class="" href="">参数设置</a>
-			<a class="" href="">帮助中心</a>
-		</div>
-	</div>
-</div>
+@@include('./include/_header.html', {
+	"title": "运营分析"
+})
+@@include('./include/_nav.html', {
+	"index": "",
+	"shop": "",
+	"member": "",
+	"operate": "current",
+	"setting": "",
+	"help": ""
+})
 <div class="wrapper">
 	<div class="main">
 		<!-- 运营概况  -->
@@ -176,106 +164,80 @@
 			</div>
 		</div>
 
-		<!-- 店铺入驻数量 -->
-		<div class="overlap flow-deal">
+		<div class="overlap flow-deal light">
 			<div class="sys-title title-deg">
-				<div class="tit-name">店铺入驻数量：</div>
-				<div class="tit-date">
-					<input id="_sDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $s = $('#_eDate');WdatePicker({minDate:'1990-1-1',maxDate:$s.val()||_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})">
-					<span>到</span>
-					<input id="_eDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $e = $('#_sDate');WdatePicker({minDate:$e.val(),maxDate:_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})" >
-					<input type="button" value="确定" class="tit-date-button">
+				<div class="tit-name">转化率</div>
+				<div class="tit-setdata">
+					<a class="active" href="javascript:;">昨日</a>
+					<a href="javascript:;">近7日</a>
+					<a href="javascript:;">近30日</a>
 				</div>
-				<div class="tit-select-wrap">
+				<div class="tit-select-wrap fl">
 					<div class="tit-select">
-						<div class="tit-select-name">所有类目</div>
+						<div class="tit-select-name">所有终端</div>
 						<div class="tit-select-option">
-							<div class="active">所有类目</div>
+							<div class="active">所有终端</div>
 							<div>2</div>
 							<div>3</div>
 							<div>4</div>
 						</div>
 					</div>
-					<div class="tit-select">
-						<div class="tit-select-name">所有地域</div>
-						<div class="tit-select-option">
-							<div class="active">所有地域</div>
-							<div>合肥</div>
-							<div>3</div>
-							<div>4</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
-							<div>5</div>
+				</div>
+			</div>
+			<div class="overlap-cont operate">
+				<ul class="percent-list">
+					<li>
+						<div>
+							<p>访客数 <img src="../images/common/up.png" alt="">2.29%</p>
+							<p class="num-first">1111</p>
 						</div>
+					</li>
+					<li>
+						<div>
+							<p>下单买家数<img src="../images/common/up.png" alt="">182.29%</p>
+							<p class="num-second">1111</p>
+						</div>
+						<div>
+							<p>下单金额<img src="../images/common/up.png" alt="">142.29%</p>
+							<p class="num-second">1111</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<p>支付买家数<img src="../images/common/up.png" alt="">182.29%</p>
+							<p class="num-third">1111</p>
+						</div>
+						<div>
+							<p>支付金额<img src="../images/common/down.png" alt="">142.29%</p>
+							<p class="num-third">1111</p>
+						</div>
+						<div>
+							<p>菜单价<img src="../images/common/down.png" alt="">142.29%</p>
+							<p class="num-third">1111</p>
+						</div>
+					</li>
+				</ul>
+				<div class="percent-img">
+					<img src="../images/common/percent.png" alt="转化率">
+					<div class="percent-pos percent-pos-t">
+						<p>下单转化率</p>
+						<p>1.15%</p>
 					</div>
-				</div>
-			</div>
-			<div class="overlap-cont">
-				<div class="overlap-echarts echarts-bg h385">
-					<div id="shop-echarts"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- 新增会员 -->
-		<div class="overlap flow-deal">
-			<div class="sys-title title-deg">
-				<div class="tit-name">新增会员：</div>
-				<div class="tit-setdata">
-					<a class="active" href="javascript:;">近7日</a>
-					<a href="javascript:;">近30日</a>
-					<a href="javascript:;">近6个月</a>
-					<a href="javascript:;">近1年</a>
-				</div>
-			</div>
-			<div class="overlap-cont">
-				<div class="overlap-echarts echarts-bg h390">
-					<div id="member-echarts"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- 在线商品 -->
-		<div class="overlap flow-deal">
-			<div class="sys-title title-deg">
-				<div class="tit-name">在线商品：</div>
-				<div class="tit-setdata">
-					<a class="active" href="javascript:;">近7日</a>
-					<a href="javascript:;">近30日</a>
-					<a href="javascript:;">近6个月</a>
-					<a href="javascript:;">近1年</a>
-				</div>
-			</div>
-			<div class="overlap-cont">
-				<div class="overlap-echarts echarts-bg h390">
-					<div id="online-echarts"></div>
+					<div class="percent-pos percent-pos-b">
+						<p>下单-支付</p>
+						<p>转化率</p>
+						<p>1.15%</p>
+					</div>
+					<div class="percent-pos percent-pos-r">
+						<p>支付转化率</p>
+						<p>11.15%</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<script src="../js/plugins/jquery.js"></script>
-<script src="../js/plugins/echarts.js"></script>
+@@include('./include/_code.html')
 <script src="../js/plugins/select.js"></script>
-<script src="../js/plugins/date/WdatePicker.js"></script>
-<script src="../js/index.js"></script>
-</body>
-</html>
+<script src="../js/operate.js"></script>
+@@include('./include/_footer.html')

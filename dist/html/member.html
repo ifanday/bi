@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>会员分析</title>
+	<link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+<div class="nav">
+	<div class="main">
+		<div class="logo"><a href="index.html"><img src="../images/common/logo.png" alt="logo"></a></div>
+		<div class="links">
+			<a class="" href="index.html">首　页</a>
+			<a class="" href="shop.html">店铺分析</a>
+			<a class="current" href="member.html">会员分析</a>
+			<a class="" href="operate.html">运营分析</a>
+			<a class="" href="">参数设置</a>
+			<a class="" href="">帮助中心</a>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<div class="main">
+		<!-- 新增会员 -->
+		<div class="overlap flow-deal">
+			<div class="sys-title title-deg">
+				<div class="tit-name">新增会员：</div>
+				<div class="tit-setdata">
+					<a class="active" href="javascript:;">近7日</a>
+					<a href="javascript:;">近30日</a>
+					<a href="javascript:;">近6个月</a>
+					<a href="javascript:;">近1年</a>
+				</div>
+			</div>
+			<div class="overlap-cont">
+				<div class="overlap-echarts echarts-bg h390">
+					<div id="member-echarts"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 会员分布 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop">会员分布</div>
+				<div class="member-map">
+					<div class="tit">店铺数量：</div>
+					<div class="changes-list">
+						<a class="active" href="javascript:;">按等级</a>
+						<a href="javascript:;">按新老</a>
+						<a href="javascript:;">按年龄</a>
+						<a href="javascript:;">按性别</a>
+					</div>
+				</div>
+			</div>
+			<div class="overlap-cont member">
+				<div class="classify-echarts">
+					<div id="classify-echarts"></div>
+				</div>
+				<div class="table-wrap classify-datalist member">
+					<table>
+						<thead>
+							<tr>
+								<th width="33%">会员等级</th>
+								<th width="33%">数量</th>
+								<th>占比</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>普通会员</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>VIP会员</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>高级会员</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>至尊会员</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- 会员价值 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop">会员价值</div>
+				<div class="member-checkbox">
+					<label for="radio-jycs">
+						<input type="radio" name="nums" id="radio-jycs">
+						<span class="icon-defalut">交易次数F(次)</span>
+					</label>
+					<label for="radio-jyze">
+						<input type="radio" name="nums" id="radio-jyze">
+						<span class="icon-defalut">交易总额M(元)</span>
+					</label>
+					<label for="radio-jypj">
+						<input type="radio" name="nums" id="radio-jypj">
+						<span class="icon-defalut">平均交易额M(元)</span>
+					</label>
+				</div>
+				<div class="template-checkbox">
+					<label for="radio-znmb">
+						<input type="radio" name="template" id="radio-znmb">
+						<span class="icon-defalut">智能模版</span>
+					</label>
+					<label for="radio-zdy">
+						<input type="radio" name="template" id="radio-zdy">
+						<span class="icon-defalut">自定义</span>
+					</label>
+				</div>
+			</div>
+			<div class="overlap-cont">
+				<div class="table-wrap table-member">
+					<table>
+						<thead>
+							<tr>
+								<th width="14.28%">
+									<div class="oblique"></div>
+									<div class="recent recent-time">最近交易时间<br>R（天）</div>
+									<div class="recent recent-stat">交易次数<br>F（次）</div>
+								</th>
+								<th width="14.28%">0 &lt; F &le; 17</th>
+								<th width="14.28%">17 &lt; F &le; 46</th>
+								<th width="14.28%">46 &lt; F &le; 102</th>
+								<th width="14.28%">102 &lt; F &le; 200</th>
+								<th width="14.28%">R &le; 200</th>
+								<th>合计</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>0 &lt; F &le; 1</td>
+								<td>68人</td>
+								<td>108人</td>
+								<td>227人</td>
+								<td>111人</td>
+								<td>111人</td>
+								<td>2222人<p class="scale">20%</p></td>
+							</tr>
+							<tr>
+								<td>1 &lt; F &le; 3</td>
+								<td>68人</td>
+								<td>108人</td>
+								<td>227人</td>
+								<td>111人</td>
+								<td>111人</td>
+								<td>2222人<p class="scale">20%</p></td>
+							</tr>
+							<tr>
+								<td>3 &lt; F &le; 4</td>
+								<td>68人</td>
+								<td>108人</td>
+								<td>227人</td>
+								<td>111人</td>
+								<td>111人</td>
+								<td>2222人<p class="scale">20%</p></td>
+							</tr>
+							<tr>
+								<td>4 &lt; F &le; 5</td>
+								<td>68人</td>
+								<td>108人</td>
+								<td>227人</td>
+								<td>111人</td>
+								<td>111人</td>
+								<td>2222人<p class="scale">20%</p></td>
+							</tr>
+							<tr>
+								<td>&gt; 5</td>
+								<td>68人</td>
+								<td>108人</td>
+								<td>227人</td>
+								<td>111人</td>
+								<td>111人</td>
+								<td>2222人<p class="scale">20%</p></td>
+							</tr>
+							<tr>
+								<td>列合计</td>
+								<td>68人<p class="scale">20%</p></td>
+								<td>108人<p class="scale">20%</p></td>
+								<td>227人<p class="scale">20%</p></td>
+								<td>111人<p class="scale">20%</p></td>
+								<td>111人<p class="scale">20%</p></td>
+								<td>2222人<p class="scale">20%</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="user-stat">
+					<label for="radio-hyyh">
+						<input type="radio" name="users" id="radio-hyyh">
+						<span class="icon-defalut">活跃用户</span>
+					</label>
+					<label for="radio-cmyh">
+						<input type="radio" name="users" id="radio-cmyh">
+						<span class="icon-defalut">沉默用户</span>
+					</label>
+					<label for="radio-lsyh">
+						<input type="radio" name="users" id="radio-lsyh">
+						<span class="icon-defalut">流失用户</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- 会员画像 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop">会员画像</div>
+			</div>
+			<div class="overlap-cont">
+				<div class="member-pic-change">
+					<div class="member-pic">
+						<div class="name">性&#12288;&#12288;别：</div>
+						<div class="changes-list" data-type="sex">
+							<a class="active" href="javascript:;">全部</a>
+							<a href="javascript:;">男</a>
+							<a href="javascript:;">女</a>
+						</div>
+					</div>
+					<div class="member-pic">
+						<div class="name">年&#12288;&#12288;龄：</div>
+							<div class="changes-list" data-type="age">
+							<a class="active" href="javascript:;">全部</a>
+							<a href="javascript:;">19岁以下</a>
+							<a href="javascript:;">20-29岁</a>
+							<a href="javascript:;">30-39岁</a>
+							<a href="javascript:;">40-49岁</a>
+							<a href="javascript:;">50岁以上</a>
+						</div>
+					</div>
+					<div class="member-pic">
+						<div class="name">会员等级：</div>
+						<div class="changes-list" data-type="level">
+							<a class="active" href="javascript:;">全部</a>
+							<a href="javascript:;">普通会员</a>
+							<a href="javascript:;">VIP会员</a>
+							<a href="javascript:;">高级会员</a>
+							<a href="javascript:;">至尊会员</a>
+						</div>
+					</div>
+					<div class="member-pic">
+						<div class="name">消费能力：</div>
+						<div class="changes-list" data-type="power">
+							<a class="active" href="javascript:;">全部</a>
+							<a href="javascript:;">偏低</a>
+							<a href="javascript:;">低</a>
+							<a href="javascript:;">中等</a>
+							<a href="javascript:;">偏高</a>
+							<a href="javascript:;">高</a>
+						</div>
+					</div>
+					<div class="member-pic">
+						<div class="name">地&#12288;&#12288;域：</div>
+						<div class="changes-list changes-area" data-type="area">
+							<a class="active" href="javascript:;">全部</a>
+							<a href="javascript:;">安徽</a>
+							<a href="javascript:;">北京</a>
+							<a href="javascript:;">上海</a>
+							<a href="javascript:;">重庆</a>
+							<a href="javascript:;">福建</a>
+							<a href="javascript:;">黑龙江</a>
+							<a href="javascript:;">黑龙江</a>
+							<a href="javascript:;">内蒙古</a>
+							<a href="javascript:;">江苏</a>
+							<a href="javascript:;">陕西</a>
+							<a href="javascript:;">黑龙江</a>
+							<a href="javascript:;">内蒙古</a>
+							<a href="javascript:;">江苏</a>
+							<a href="javascript:;">陕西</a>
+							<a href="javascript:;">黑龙江</a>
+							<a href="javascript:;">内蒙古</a>
+							<a href="javascript:;">江苏</a>
+							<a href="javascript:;">陕西</a>
+							<a href="javascript:;">内蒙古</a>
+							<a href="javascript:;">江苏</a>
+							<a href="javascript:;">陕西</a>
+							<a href="javascript:;">黑龙江</a>
+							<a href="javascript:;">内蒙古</a>
+							<a href="javascript:;">江苏</a>
+							<a href="javascript:;">陕西</a>
+							<a href="javascript:;">黑龙江</a>
+							<a href="javascript:;">内蒙古</a>
+							<a href="javascript:;">江苏</a>
+							<a href="javascript:;">陕西</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="member-pic-scale">
+					<div class="desc">您已选择标签 (最多选5个)</div>
+					<div class="label" id="label"></div>
+				</div>
+
+				<div class="member-round-view">
+					<div class="member-round-data">
+						<div class="tit">具有所选标签人数：</div>
+						<div class="member-round-pic" data-scale="2000"></div>
+					</div>
+					<div class="member-round-data">
+						<div class="tit">占平台总人群比例：</div>
+						<div id="data-scale" class="member-round-pic">					
+				            <div class="member-mask member-mask-l"></div>
+				            <div class="member-mask member-mask-r"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="member-table">
+					<div class="table-wrap">
+						<table>
+							<thead>
+								<tr>
+									<th width="10.7%">序号</th>
+									<th width="14.9%">用户ID</th>
+									<th width="10%">性别</th>
+									<th width="12%">年龄段</th>
+									<th width="14.4%">地域</th>
+									<th width="12.6%">会员等级</th>
+									<th width="12.4%">消费能力</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="woman">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="woman">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="woman">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>名称1</td>
+									<td>电子产品</td>
+									<td>23123</td>
+									<td>5</td>
+									<td>50%</td>
+									<td>78</td>
+									<td><a href="javascript:;" data-type="man">查看画像</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="m-pages">
+						<span class="peve-all">首页</span>
+						<span class="peve">&lt; 上一页</span>
+						<span class="current">1</span>
+						<a href="javascript:;">2</a>
+						<a href="javascript:;">3</a>
+						<span>...</span>
+						<a href="javascript:;" class="peve">下一页 &gt;</a>
+						<a href="javascript:;" class="peve-all">尾页</a>
+						<div class="msg">共10页</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="layer-member">
+	<div class="m-mask"></div>
+	<div class="layer-member-bg"></div>
+
+	<div class="feature feature-l feature-b feature-sex"><span>性别</span></div>
+	<div class="feature feature-l feature-b feature-age"><span>年龄</span></div>
+	<div class="feature feature-l feature-b feature-education"><span>教育程度</span></div>
+	<div class="feature feature-l feature-b feature-constellation"><span>星座</span></div>
+
+	<div class="feature feature-l feature-t feature-waist"><span>腰围</span></div>
+	<div class="feature feature-l feature-t feature-house"><span>是否有房</span></div>
+	<div class="feature feature-l feature-t feature-buy-peo"><span>所属购买群体</span></div>
+
+	<div class="feature feature-r feature-b feature-marry"><span>婚否</span></div>
+	<div class="feature feature-r feature-b feature-income"><span>收入</span></div>
+	<div class="feature feature-r feature-b feature-active"><span>活跃程度</span></div>
+	<div class="feature feature-r feature-b feature-buy-type"><span>购物类型</span></div>
+
+	<div class="feature feature-r feature-t feature-color"><span>颜色偏好</span></div>
+	<div class="feature feature-r feature-t feature-buy-power"><span>购买力</span></div>
+	<div class="feature feature-r feature-t feature-buy-loyalty"><span>购物忠诚度</span></div>
+</div>
+<script src="../js/plugins/jquery.js"></script>
+<script src="../js/plugins/echarts.js"></script>
+<script src="../js/plugins/select.js"></script>
+<script src="../js/member.js"></script>
+</body>
+</html>

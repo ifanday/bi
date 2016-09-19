@@ -119,7 +119,7 @@
 	}
 
 	// 扩充焦点
-	$('.tit-setdata').each(function(){
+	$('.tit-setdata, .changes-list').each(function(){
 		var $t = $(this);
 		$t.on('click', 'a', function(){
 			var _$t = $(this);

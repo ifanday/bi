@@ -10,6 +10,55 @@ $width: 1230px;
 %bgicon{
 	background:url(./../images/base/icon.png) no-repeat;
 }
+
+%checkbox{
+	input[type="checkbox"],
+	input[type="radio"]{
+		display:none;
+
+		&:checked + span:before{
+			background-position:0px -39px;
+		}
+	}
+
+	span{
+		padding-left:30px;
+		display:inline-block;
+		position:relative;
+		width:135px;
+
+		&::selection{
+			background-color:transparent;
+		}				
+
+		&:before{
+			content:"";
+			position:absolute;
+			left:0;
+			top:50%;
+			width:21px;
+			height:22px;
+			transform:translateY(-50%);
+			@extend %bgicon;
+			background-position:-21px -39px;
+		}
+	}
+}
+
+%changes{
+	a{
+		padding:0 15px;
+		min-width:36px;
+		float:left;
+		border:1px solid $titBg;
+		margin:-1px 0 0 -1px;
+		text-align:center;
+	}
+	.active{
+		color:#fff;
+		background-color:$titBg;
+	}
+}
 .mb-10{
 	margin-bottom:10px;
 }
@@ -165,6 +214,14 @@ body{
 		background-color:#fff;
 		border-radius:0 0 $bdrs $bdrs;
 
+		&.operate{
+			background-color:#f5f5f5;
+		}
+
+		&.member{
+			padding:10px 40px 30px 0;
+		}
+
 		.condition{
 			padding:10px 30px;
 			font:18px/45px "microsoft yahei";
@@ -175,37 +232,9 @@ body{
 			}
 			.checkboxs{
 				width:1020px;			
-	
-				input[type="checkbox"]{
-					display:none;
-
-					&:checked + span:before{
-						background-position:0px -39px;
-					}
-				}
-
-				span{
-					padding-left:30px;
-					display:inline-block;
-					position:relative;
-					width:135px;
-
-					&::selection{
-						background-color:transparent;
-					}				
-
-					&:before{
-						content:"";
-						position:absolute;
-						left:0;
-						top:50%;
-						width:21px;
-						height:22px;
-						transform:translateY(-50%);
-						@extend %bgicon;
-						background-position:-21px -39px;
-					}
-				}
+				
+				@extend %checkbox;
+				
 			}
 		}
 
@@ -354,6 +383,22 @@ body{
 	overflow:hidden;
 	border:1px solid $titBg;
 	border-radius:$bdrs;
+
+	&.member{
+
+		thead{
+			background-color:tdBg;
+
+
+		}
+
+		tbody{
+
+			td{
+				background-color:transparent;
+			}
+		}
+	}
 }
 table{
 	$theadBg: $titleBg;
@@ -443,4 +488,51 @@ table{
 	height:50px;
 	background-color:#9f9f9f;
 	-webkit-border-radius:4px;
+}
+
+$kfMbmber: 605px;
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name}{
+		@content;
+	}
+	
+	@-moz-keyframes #{$name}{
+		@content;
+	}
+
+	@-ms-keyframes #{$name}{
+		@content;
+	}
+
+	@-o-keyframes #{$name}{
+		@content;
+	}
+
+	@keyframes #{$name}{
+		@content;
+	}
+}
+
+@include keyframes(member){
+	80%	{
+		width:$kfMbmber+20;
+		height:$kfMbmber+20;
+	}
+	85%	{
+		width:$kfMbmber - 15;
+		height:$kfMbmber - 15;
+	}
+	90%	{
+		width:$kfMbmber+10;
+		height:$kfMbmber+10;
+	}
+	95% {
+		width:$kfMbmber - 5;
+		height:$kfMbmber - 5;
+	}
+	100%{
+		width:$kfMbmber;
+		height:$kfMbmber;
+	}
 }

@@ -1,0 +1,519 @@
+.table-wrap{
+
+	&.table-member{
+		border-radius:0;
+		border-width:0 0 1px;
+
+		table{
+			color:$titBg;
+			font-size:20px;
+		}
+
+		thead{
+			background-color:#edf2fd;
+
+			th{
+				font-weight:normal;
+				&:first-child{
+					position:relative;
+				}
+
+				.oblique{
+					position:absolute;
+					top:0;
+					left:0;
+					right:0;
+					bottom:0;
+					overflow:hidden;
+
+					&:before,
+					&:after{
+						content:"";
+						position:absolute;
+						left:0;
+						top:0;
+						border:solid transparent;
+						border-width:88px 175px;
+					}
+
+					&:before{
+						
+						border-left-color:#5a74ab;
+					}
+
+					&:after{
+						top:1px;
+						border-left-color:#edf2fd;
+					}
+				}
+				.recent{
+					position:absolute;
+					font-size:17px;
+					$dis: 5px;
+
+					&.recent-time{
+						right:$dis;
+						top:0;
+						text-align:right;
+					}
+
+					&.recent-stat{
+						left:$dis;
+						bottom:0;
+						text-align:left;
+					}
+				}
+			}
+		}
+
+		tbody{
+
+			td{
+				background-color:transparent;
+			}
+		}
+		
+		th,
+		td{
+			height:85px;
+
+			&:first-child{
+				background-color:#edf2fd;
+			}
+
+			.scale{
+				font-size:15px;
+				color:#f70;
+			}
+		}
+	}
+}
+
+.user-stat{
+	height:66px;
+}
+
+.member-checkbox{
+	float:left;
+	height:100%;
+}
+.template-checkbox{
+	float:right;
+	margin-right:30px;
+	height:100%;
+}
+.user-stat{
+	line-height:66px;
+	text-align:center;
+}
+.member-checkbox,
+.template-checkbox,
+.user-stat{
+	font-size:18px;
+	
+	color:#565656;
+
+	label{
+		margin-left:20px;
+	}
+
+	span{
+		width:auto;
+	}
+
+	@extend %checkbox;
+}
+
+.member-map{
+	color:#606060;
+	float:left;
+
+	.tit{
+		margin:0 25px;
+		float:left;
+	}
+
+	.changes-list{		
+		float:left;
+		line-height:42px;
+		margin-top:12px;
+	}
+}
+
+.changes-list{
+	@extend %changes;
+}
+
+.member-pic-change{
+	margin:0 40px 0 30px;
+	padding-bottom:24px;
+	font:18px/42px "microsoft yahei";
+	border-bottom:1px dashed #454545;
+
+	.member-pic{
+		@extend %flex;
+
+		margin-top:16px;
+
+		.name{
+			width:95px;
+			text-align:left;
+		}
+		.changes-list{
+			width:1000px;
+
+			&.changes-area{
+				a{
+					padding:0;
+					min-width:66px;
+				}
+			}
+		}
+	}
+}
+
+.member-pic-scale{
+	margin-top:10px;
+	font-size:18px;
+
+	.desc{
+		padding-left:37px;
+		color:#212121;
+		line-height:45px;
+	}
+	
+	.label{
+		line-height:32px;
+
+		@extend %clearfix;
+
+		span{
+			position:relative;
+			margin:0 15px 0 25px;
+			padding:0 10px;
+			float:left;
+			min-width:22px;
+			color:#fff;
+			background-color:#20b89b;
+			border-radius:3px 0 0 3px;
+
+			&:after{
+				content:"";
+				position:absolute;
+				top:0;
+				left:100%;
+				width:15px;
+				height:32px;
+				background:url(../images/common/right.png) no-repeat;
+			}
+		}
+	}
+}
+
+.member-round-view{
+	margin-top:45px;
+
+	@extend %clearfix;
+
+	.member-round-data{
+		float:left;
+		margin:0 60px;
+		width:300px;
+
+		.tit{
+			text-align:center;
+			font-size:15px;
+			color:#363636;
+		}
+
+		.member-round-pic{
+			$w: 300px;
+
+			position:relative;
+			margin-top:15px;
+			width:$w;
+			height:$w;
+			overflow:hidden;
+			border-radius:50%;
+
+			&:after,
+			&:before{
+				position:absolute;
+			}
+
+			&:after{
+                width:94%;
+                height:94%;
+                left:3%;
+                top:3%;
+                line-height:$w*0.9;
+                text-align:center;            
+                content: attr(data-scale);
+                color:#f60;
+                font-size:66px;
+                z-index:2;
+                background:white;
+                border-radius:50%;
+			}
+
+			&:before{
+                width:100%;
+                height:100%;
+                left:0;
+                top:0;
+                content:"";                
+                background:#cacaca;
+                border-radius:50%;
+            }
+
+            .member-mask{
+            	width:100%;
+                height:100%;
+                left:0;
+                top:0;              
+                position:absolute;
+                border-radius:50%;
+                overflow:hidden;
+                z-index:1;
+
+                &:before{
+	                position:absolute;
+	                width:50%;
+	                height:100%;
+	                content:"";
+	                top:0;
+	                background:#f60;
+	                transition:all 0.5s linear;
+	            }
+				
+				&.member-mask-l{
+	                clip:rect(0, auto, auto, $w/2);
+
+	                &:before{
+		                left:0;
+		                border-radius:$w/2 0 0 $w/2;
+		                transform-origin:right;
+		            }
+	            }
+	            &.member-mask-r{
+	                clip:rect(0, $w/2, auto, auto);
+
+	                &:before{
+		                right:0;
+		                transform-origin:left;
+		                border-radius:0 $w/2 $w/2 0;
+		            }
+	            }
+            }            
+		}
+	}
+}
+
+.member-table{
+	padding:85px 35px 50px;
+
+	td{
+		a{
+			color:#f60;
+		}
+	}
+}
+#layer-member{
+	display:none;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:0;
+	height:0;
+	z-index:9999;
+	border-radius:50%;
+	overflow:hidden;
+	transform:translateX(-50%) translateY(-50%);
+	animation:.8s member linear both;
+
+	.layer-member-bg{
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+	}
+
+	&.man,
+	&.woman{
+		display:block;
+	}
+
+	&.man{
+		.layer-member-bg{
+			background:url(../images/common/man.png) no-repeat 166px center;
+		}
+	}
+
+	&.woman{
+		.layer-member-bg{
+			background:url(../images/common/man.png) no-repeat 166px center;
+		}
+	}
+
+	.feature{
+		$c: #f4e0ce;
+		$deg: 25deg;
+
+		position:absolute;
+		width:70px;
+		height:30px;
+		font:14px/30px "microsoft yahei";
+		color:#f60;
+		text-align:center;
+		border:1px solid #f60;
+		background-color:#fef2e7;
+		
+		span{
+			display:block;
+			width:100%;
+			height:100%;
+			white-space:nowrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+		}
+
+		&.feature-buy-peo{
+			width:100px;
+		}
+		&.feature-buy-loyalty{
+			width:90px;
+		}
+
+		&:after,
+		&:before{
+			content:"";
+			position:absolute;
+			background-color:$c;
+		}
+		&:before{
+			width:10px;
+			height:10px;
+			border-radius:50%;			
+		}
+		&:after{
+			height:1px;
+		}
+
+		&.feature-l{
+			&:after,
+			&:before{
+				left:100%;
+			}
+			&:before{
+				margin-left:4px;
+			}
+			&:after{				
+				margin-left:9px;
+				transform-origin:left top
+			}
+			&.feature-b{
+				&:after{
+					transform:rotate($deg);
+				}
+			}
+			&.feature-t{
+				&:after{
+					transform:rotate(-$deg);
+				}				
+			}
+		}
+
+		&.feature-r{
+			&:after,
+			&:before{
+				right:100%;
+			}
+			&:before{
+				margin-right:4px;
+			}
+			&:after{				
+				margin-right:9px;
+				transform-origin:right top
+			}
+			&.feature-b{
+				&:after{
+					transform:rotate(-$deg);
+				}
+			}
+			&.feature-t{
+				&:after{
+					transform:rotate($deg);
+				}
+				&.feature-color{
+					&:after{
+						transform:rotate($deg+10);
+					}
+				}
+			}
+		}
+		&.feature-t{
+			&:before{
+				top:2px;
+			}
+			&:after{
+				top:7px;
+			}
+		}
+		&.feature-b{
+			&:before{
+				bottom:2px;
+			}
+			&:after{
+				bottom:7px;
+			}
+		}
+	}
+	
+	$lenMin: 70px;
+	$lenMax: 105px;
+
+	$feature: 	(sex 157px 57px $lenMin)
+				(age 142px 107px $lenMin) 
+				(education 77px 147px $lenMax) 
+				(constellation 44px 195px $lenMax)
+				(waist 100px 344px $lenMax)
+				(house 120px 400px $lenMin)
+				(buy-peo 90px 465px $lenMin)
+				(marry 390px 57px $lenMin)
+				(income 380px 100px $lenMin)
+				(active 443px 146px $lenMax)
+				(buy-type 460px 195px $lenMax)
+				(color 450px 375px $lenMax)
+				(buy-power 400px 425px $lenMin)
+				(buy-loyalty 413px 475px $lenMax);
+
+	@mixin pos($left, $top, $width) {
+		left:$left;
+		top:$top;
+
+		&:after{
+			width:$width;
+		}
+	}
+
+	@each $attr in $feature{
+		$name:	nth($attr,1);
+		$left:	nth($attr,2);
+		$top:	nth($attr,3);
+		$width: nth($attr,4);
+
+		.feature-#{$name}{
+			@include pos($left, $top, $width);
+		}
+	}
+}
+.m-mask{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background:#000;
+	opacity:.7;
+}
