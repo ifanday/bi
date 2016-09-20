@@ -17,6 +17,13 @@ gulp.task('minjs', function() {
         .pipe(gulp.dest('js'))
         .pipe(notify({ message: 'minjs task complete' }));
 });
+gulp.task('exportjs', function() {
+    return gulp.src(['./src/js/*.js'])
+        //.pipe(rename({ suffix: '.min' }))
+        //.pipe(uglify())
+        .pipe(gulp.dest('./dist/js/'))
+        .pipe(notify({ message: 'minjs task complete' }));
+});
 gulp.task('sass', function() {
     return gulp.src('./src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -96,8 +103,9 @@ gulp.task('watch', function() {
 	gulp.watch('./dist/css/*.css', ['html']); //监控css文件
     gulp.watch(['./dist/js/*.js', './dist/js/plugins/*.js'], ['html']);  //监控js文件
     gulp.watch(['./dist/html/*.html'], ['html']);  //监控html文件
-    gulp.watch(['./src/html/*.html', './src/html/*/*.html'], ['fileinclude'])
+    gulp.watch(['./src/html/*.html', './src/html/*/*.html'], ['fileinclude']);
+    gulp.watch(['./src/js/*.js'], ['exportjs']);
     gulp.watch(['./src/sass/*.scss', './src/sass/*/*.scss', './src/sass/*/*/*.scss'], ['sass']);
 });
 // 默认任务
-gulp.task('server',['connect','watch']);
+gulp.task('bi',['connect','watch']);

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>运营分析</title>
+	<link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+<div class="nav">
+	<div class="main">
+		<div class="logo"><a href="index.html"><img src="../images/common/logo.png" alt="logo"></a></div>
+		<div class="links">
+			<a class="" href="index.html">首　页</a>
+			<a class="" href="shop.html">店铺分析</a>
+			<a class="" href="member.html">会员分析</a>
+			<a class="current" href="operate.html">运营分析</a>
+			<a class="" href="">参数设置</a>
+			<a class="" href="">帮助中心</a>
+		</div>
+	</div>
+</div>
+<div class="member-nav">
+	<a href="operate.html" class="">运营概况</a>
+	<a href="operate-flow.html" class="current">流量构成</a>
+	<a href="" class="">交易构成</a>
+	<a href="" class="">搜索词分析</a>
+	<a href="" class="">商品分析</a>
+</div>
+<div class="wrapper">
+	<div class="main">
+		<!-- 访客分部 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name">访客分部</div>
+				<div class="tit-setdata">
+					<a class="active" href="javascript:;">昨日</a>
+					<a href="javascript:;">近7日</a>
+					<a href="javascript:;">近30日</a>
+				</div>
+			</div>
+			<div class="overlap-cont operate-flow">
+				<div class="operate-flow-canvases">
+					<div class="tit">性别</div>
+					<div class="items" id="items-sex"></div>
+				</div>
+				<div class="operate-flow-canvases">
+					<div class="tit">等级</div>
+					<div class="items" id="items-level"></div>
+				</div>
+				<div class="operate-flow-canvases">
+					<div class="tit">年龄</div>
+					<div class="items" id="items-age"></div>
+				</div>
+				<div class="operate-flow-canvases">
+					<div class="tit">新老会员</div>
+					<div class="items" id="items-new"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 按地域 -->
+		<div class="overlap flow-deal light">
+			<div class="sys-title title-deg">
+				<div class="tit-name icon-shop icon-2">按地域</div>
+			</div>
+			<div class="overlap-cont operate-flow-pd">
+				<div class="classify-echarts">
+					<div id="area-echarts"></div>
+				</div>
+				<div class="table-wrap classify-datalist">
+					<table>
+						<thead>
+							<tr>
+								<th width="33%">地域</th>
+								<th width="33%">数量</th>
+								<th>占比</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>合肥</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>北京</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>上海</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>其他</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td>其他</td>
+								<td>1234</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../js/plugins/jquery.js"></script>
+<script src="../js/plugins/echarts.js"></script>
+<script src="../js/plugins/china.js"></script>
+<script src="../js/plugins/select.js"></script>
+<script src="../js/operate-flow.js"></script>
+</body>
+</html>

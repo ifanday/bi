@@ -108,10 +108,43 @@
 
 	}
 }
-
 .operate{
 
 	.overlap-cont{
 		background-color:#f5f5f5;
 	}
 }
+
+
+/* 流量构成*/
+.overlap-cont.operate-flow{
+	padding:45px 0 0 8px;
+}
+.operate-flow-canvases{
+	float:left;
+	width:290px;
+	text-align:center;
+
+	.tit{
+		display:inline-block;
+		padding:0 20px;
+		height:32px;
+		font:18px/32px $yh;
+		background-color:#e8eef8;
+		border:1px solid #9e9e9e;
+		border-radius:$bdrs;
+	}
+	.items{
+		height:420px;
+	}
+}
+.operate-flow-pd{
+	padding:40px 35px 40px 0;
+}
+
+/* 流量构成*/
+
+/* 流量构成*/
+
+/* 流量构成*/
+

@@ -29,7 +29,6 @@
 		background-position: 0px 0px;
 	}
 
-
 }
 
 
@@ -42,6 +41,10 @@
 	&.member{
 		overflow:hidden;
 		margin-top:100px;
+	}
+
+	&.member-old{
+		margin-top:150px;
 	}
 }
 
@@ -124,9 +127,23 @@
 	padding:35px 40px 50px;
 }
 
-#classify-echarts{
+#classify-echarts,
+#classify-order-old{
 	width:100%;
 	height:460px;
+}
+
+#classify-order-age{
+	height:270px;
+	border:1px solid $titBg;
+	border-radius:$bdrs;
+}
+#classify-order-sex{
+	float:right;
+	height:360px;
+	width:840px;
+	border:1px solid $titBg;
+	border-radius:$bdrs;
 }
 
 #area-echarts{

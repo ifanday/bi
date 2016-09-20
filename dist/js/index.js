@@ -4,7 +4,7 @@
 		checkboxs = checkedWrap.querySelectorAll('input[type="checkbox"]'),
 		checkAll = checkedWrap.querySelector('#checkbox-all');
 
-	;[].forEach.call(checkboxs, function(v){
+	[].forEach.call(checkboxs, function(v){
 		v.addEventListener('click', function(){
 			if(this.checked){
 				if(v.id=='checkbox-all'){

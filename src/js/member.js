@@ -35,13 +35,15 @@
 	});
 
 	// 圆环角度
-	var oBox = document.querySelector('#data-scale'),
-        oHead = document.querySelector('head');
+	var oBox = d.querySelectorAll('.member-round-pic'),
+        oHead = d.querySelector('head');
 
-    w.setOStyle = function(num){
-        var oStyle = document.querySelector('#cssText'),
+    w.setOStyle = function(count ,num){
+        var oStyle = d.querySelector('#cssText'),
+            count = parseInt(count),
+            num = num>100?100:num
             deg = parseInt(num/50*180),
-            scale = parseInt(oBox.dataset.scale),
+            scale = parseInt(oBox[1].getAttribute('data-scale')),
             speedL = speedR = 0;
 
         if(isNaN(scale)){
@@ -64,7 +66,8 @@
             }
         }
 
-        oBox.dataset.scale = num+'%';
+        oBox[0].dataset.scale = count;
+        oBox[1].dataset.scale = num+'%';
         if(!oStyle){
             oStyle = document.createElement('style');
             oStyle.id = 'cssText';
@@ -81,9 +84,6 @@
         for(var attr in options)str+=attr+'{'+options[attr]+'}';
         sheet.styleSheet? sheet.styleSheet.cssText=str:sheet.innerHTML=str;
     }
-
-    // 初始化比例
-    setOStyle(100);
 
     // 查看画像
     var memberTable = d.querySelector('.member-table'),
@@ -111,7 +111,15 @@
 
 var addMember = echarts.init(document.querySelector('#member-echarts')),
 	
-	classify = echarts.init(document.querySelector('#classify-echarts')),
+    isLevel = document.querySelector('#classify-echarts'),
+    isOld = document.querySelector('#classify-order-old'),
+    isAge = document.querySelector('#classify-order-age'),
+    isSex = document.querySelector('#classify-order-sex'),
+
+    classify = isLevel?echarts.init(isLevel):null,
+    orderOld = isOld?echarts.init(isOld):null,
+    orderAge = isAge?echarts.init(isAge):null,
+	orderSex = isSex?echarts.init(isSex):null,
 
 	addMemberOption = {
 	    dataZoom: [
@@ -228,6 +236,7 @@ var addMember = echarts.init(document.querySelector('#member-echarts')),
 	        
 	    ]
 	},
+
 
     classifyOption = {
         title: {
@@ -349,7 +358,286 @@ var addMember = echarts.init(document.querySelector('#member-echarts')),
         }]
     },
 
+    orderOldOption = {
+        title: {
+            subtext: '',
+            x: 'left'
+        },
+        /*tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)",
+            backgroundColor: '#fff', //背景颜色（此时为默认色）
+            //formatter : 'x:{b0}: y:{c0}<br />{b1}: {c1}' ,
+            borderColor: '#666',
+            borderWidth: 1,
+            textStyle: {
+                color: '#666'
+            }
+        },*/
+        legend: {
+            orient: 'horizontal',
+            x: 'center',
+            bottom: 0,
+            data: ['老会员', '新会员']
+        },
+        series: [{
+            name: '',
+            type: 'pie',
+            //radius : '55%',
+            radius: ['30%', '80%'],
+            center: ['50%', '50%'],
+            label: {
+                normal: {
+                    show: true,
+                    formatter: "{b} : {c} \n {d}%",
+                    position: 'inside',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '16',
+                        // fontWeight: 'bold'
+                    }
+                }
+            },
+            color: ['#3876c1', '#ffa003'],
+            data: [{
+                value: 335,
+                name: '老会员',
+                itemStyle: {
+                    normal: {
+                        //color: '#3876c1',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        color: '#3876c1',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }, {
+                value: 310,
+                name: '新会员',
+                itemStyle: {
+                    normal: {
+                        //color: '#b6b6b6',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        //color: '#b6b6b6',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+
+            }]
+        }]
+    },
+
+    orderAgeOption = {
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        backgroundColor: '#d8deeb',
+        grid: {
+            left: '3%',
+            right: 0,
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['19岁以下', '20-29岁', '30-39岁', '40-49岁', '50岁以上'],
+                axisTick: {
+                    alignWithLabel: true,
+                    lineStyle: {
+                        opacity: 0
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#b6bace'
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#8f90cb'
+                    }
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                boundaryGap: ['0', '100%'],
+                axisTick: {
+                    lineStyle: {
+                        opacity: 0
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#b6bace'
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#8f90cb'
+                    }
+                }
+            }
+        ],
+        series : [
+            {
+                name:'',
+                type:'bar',
+                barWidth: '60%',
+                data:[10, 52, 200, 334, 390]
+            }
+        ]
+    },
+
+    orderSexOption = {
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        backgroundColor: '#d8deeb',
+        grid: [{
+            left: 50,
+            right: 0,
+            height: '35%'
+        }, {
+            left: 50,
+            right: 0,
+            top: '52%',
+            height: '35%'
+        }],
+        xAxis : [
+            {
+                type : 'category',
+                data : [''],
+                axisTick: {
+                    alignWithLabel: true,
+                    lineStyle: {
+                        opacity: 0
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#616086'
+                    }
+                }
+            },
+            {
+                gridIndex: 1,
+                type : 'category',
+                data : [''],
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    show: false
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                interval: 200,
+                max: 600,
+                axisTick: {
+                    alignWithLabel: true,
+                    lineStyle: {
+                        opacity: 0
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#8f90cb'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#b6bace'
+                    }
+                }
+            },
+            {
+                interval: 200,
+                max: 600,
+                gridIndex: 1,
+                type : 'value',
+                inverse: true,
+                axisTick: {
+                    alignWithLabel: true,
+                    lineStyle: {
+                        opacity: 0
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#8f90cb'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#b6bace'
+                    }
+                }
+                
+            }
+        ],
+        series : [
+            {
+                name:'男',
+                type:'bar',
+                barWidth: '10%',
+                data:[150]
+            },
+            {
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                name:'女',
+                type:'bar',
+                barWidth: '10%',
+                data:[{
+                    value: 250,
+                    itemStyle: {
+                        normal: {
+                            color: '#fb5284'
+                        }
+                    }
+                }]
+            }
+        ]
+    },
+
 	num;
 
 addMember.setOption(addMemberOption);
-classify.setOption(classifyOption);
+
+classify&&classify.setOption(classifyOption);
+
+orderOld&&orderOld.setOption(orderOldOption);
+
+orderAge&&orderAge.setOption(orderAgeOption);
+
+orderSex&&orderSex.setOption(orderSexOption);

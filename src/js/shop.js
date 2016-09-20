@@ -29,16 +29,16 @@ var classify = echarts.init(document.querySelector('#classify-echarts')),
             data: ['服装', '家电', '食品', '电子产品', '其他']
         },
         series: [{
-            name: '访问来源',
+            name: '',
             type: 'pie',
             //radius : '55%',
-            radius: ['40%', '93%'],
+            radius: ['30%', '55%'],
             center: ['50%', '50%'],
             label: {
                 normal: {
                     show: true,
                     formatter: "{b} : {c} \n {d}%",
-                    position: 'inside',
+                    //position: 'inside',
                     textStyle: {
                     	fontSize: 14
                     }
@@ -46,10 +46,12 @@ var classify = echarts.init(document.querySelector('#classify-echarts')),
                 emphasis: {
                     show: true,
                     textStyle: {
-                        fontSize: '16',
-                        // fontWeight: 'bold'
+                        fontSize: '16'
                     }
                 }
+            },
+            xAxis: {
+
             },
             data: [{
                 value: 335,
@@ -473,9 +475,7 @@ var classify = echarts.init(document.querySelector('#classify-echarts')),
 	            data: [820, 1290, 1330, 1320]
 	        }
 	    ]
-	},
-
-    num;
+	};
 
 classify.setOption(classifyOption);
 

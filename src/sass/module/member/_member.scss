@@ -346,13 +346,13 @@
 
 	&.man{
 		.layer-member-bg{
-			background:url(../images/common/man.png) no-repeat 166px center;
+			background:url(../images/common/man.png) no-repeat;
 		}
 	}
 
 	&.woman{
 		.layer-member-bg{
-			background:url(../images/common/man.png) no-repeat 166px center;
+			background:url(../images/common/man.png) no-repeat left 100%;
 		}
 	}
 
@@ -470,23 +470,32 @@
 		}
 	}
 	
+	/**
+	 * [ 小人特征定位 ]
+	 * @lenMin {[string]} 线宽
+	 * @lenMax {[string]} 线宽
+	 * @feature {[object]} 1. class, 2. left, 3. top, 4. 线宽  
+	 */
 	$lenMin: 70px;
+	$lenMing: 80px;
+	$lenMong: 95px;
 	$lenMax: 105px;
-
+	$lenLong: 120px;
+	
 	$feature: 	(sex 157px 57px $lenMin)
 				(age 142px 107px $lenMin) 
 				(education 77px 147px $lenMax) 
-				(constellation 44px 195px $lenMax)
+				(constellation 44px 195px $lenLong)
 				(waist 100px 344px $lenMax)
-				(house 120px 400px $lenMin)
-				(buy-peo 90px 465px $lenMin)
+				(house 120px 400px $lenMing)
+				(buy-peo 90px 465px $lenMing)
 				(marry 390px 57px $lenMin)
 				(income 380px 100px $lenMin)
 				(active 443px 146px $lenMax)
 				(buy-type 460px 195px $lenMax)
-				(color 450px 375px $lenMax)
+				(color 450px 375px $lenMong)
 				(buy-power 400px 425px $lenMin)
-				(buy-loyalty 413px 475px $lenMax);
+				(buy-loyalty 413px 475px $lenMong);
 
 	@mixin pos($left, $top, $width) {
 		left:$left;
@@ -516,4 +525,12 @@
 	left:0;
 	background:#000;
 	opacity:.7;
+}
+.member-age,
+.member-sex{
+	padding:40px;
+}
+.classify-order-sex-pic{
+	float:left;
+	margin-left:60px;
 }
