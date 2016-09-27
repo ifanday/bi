@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>运营分析</title>
+	<link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+<div class="nav">
+	<div class="main">
+		<div class="logo"><a href="index.html"><img src="../images/common/logo.png" alt="logo"></a></div>
+		<div class="links">
+			<a class="" href="index.html">首　页</a>
+			<a class="" href="shop.html">店铺分析</a>
+			<a class="" href="member.html">会员分析</a>
+			<a class="current" href="operate.html">运营分析</a>
+			<a class="" href="setting.html">参数设置</a>
+			<a class="" href="">帮助中心</a>
+		</div>
+	</div>
+</div>
+<div class="member-nav">
+	<a href="operate.html" class="">运营概况</a>
+	<a href="operate-flow.html" class="">流量构成</a>
+	<a href="operate-trade.html" class="">交易构成</a>
+	<a href="operate-sea.html" class="">搜索词分析</a>
+	<a href="operate-commodity.html" class="current">商品分析</a>
+</div>
+<div class="wrapper">
+    <div class="main">
+        <!-- 在线商品数 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg">
+                <div class="tit-name">在线商品数</div>
+                <div class="tit-setdata">
+                    <a class="active" href="javascript:;">昨日</a>
+                    <a href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+            </div>
+            <div class="overlap-cont">
+                <div class="items-from-link-wrap">
+                    <div class="operate-flow-canvases small fr">
+                        <div id="commodity-round"></div>
+                    </div>
+                    <div class="items-from-link-view fl">
+                        <div id="commodity-view"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 被下单商品数 -->
+        <div class="overlap flow-deal">
+            <div class="sys-title title-deg">
+                <div class="tit-name">被下单商品数</div>
+                <div class="tit-setdata">
+                    <a class="active" href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+                <div class="tit-select-wrap">
+                    <div class="tit-select">
+                        <div class="tit-select-name">所有终端</div>
+                        <div class="tit-select-option">
+                            <div class="active">所有终端</div>
+                            <div>合肥</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                        </div>
+                    </div>
+                    <div class="tit-select">
+                        <div class="tit-select-name">所有类目</div>
+                        <div class="tit-select-option">
+                            <div class="active">所有类目</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlap-cont">
+                <div class="overlap-echarts echarts-bg h390">
+                    <div id="commodity-order"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 被支付商品数 -->
+        <div class="overlap flow-deal">
+            <div class="sys-title title-deg">
+                <div class="tit-name">被支付商品数</div>
+                <div class="tit-setdata">
+                    <a class="active" href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+                <div class="tit-select-wrap">
+                    <div class="tit-select">
+                        <div class="tit-select-name">所有终端</div>
+                        <div class="tit-select-option">
+                            <div class="active">所有终端</div>
+                            <div>合肥</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                            <div>5</div>
+                        </div>
+                    </div>
+                    <div class="tit-select">
+                        <div class="tit-select-name">所有类目</div>
+                        <div class="tit-select-option">
+                            <div class="active">所有类目</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlap-cont">
+                <div class="overlap-echarts echarts-bg h390">
+                    <div id="commodity-pay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品排行 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg">
+                <div class="tit-name">商品排行</div>
+                <div class="tit-date">
+                    <input id="_sDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $s = $('#_eDate');WdatePicker({minDate:'1990-1-1',maxDate:$s.val()||_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})">
+                    <span>到</span>
+                    <input id="_eDate" type="text" class="tit-date-input" placeholder="日期" onfocus="var _d = new Date(), $e = $('#_sDate');WdatePicker({minDate:$e.val(),maxDate:_d.getFullYear()+'-'+(_d.getMonth()+1)+'-'+_d.getDate()})" >
+                    <input type="button" value="确定" class="tit-date-button">
+                </div>
+                <div class="tit-setdata min">
+                    <a class="active" href="javascript:;">全部</a>
+                    <a href="javascript:;">昨日</a>
+                    <a href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+            </div>
+            <div class="overlap-cont table-pd">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">排名</th>
+                                <th width="14.9%">商品名称</th>
+                                <th width="16%">浏览量</th>
+                                <th width="16%">访客数</th>
+                                <th width="14.4%">成交量</th>
+                                <th width="13.7%">交易金额</th>
+                                <th>支付转化率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>名称1</td>
+                                <td>电子产品</td>
+                                <td>23123</td>
+                                <td>5</td>
+                                <td>78</td>
+                                <td>50%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="m-pages">
+                    <span class="peve-all">首页</span>
+                    <span class="peve">&lt; 上一页</span>
+                    <span class="current">1</span>
+                    <a href="javascript:;">2</a>
+                    <a href="javascript:;">3</a>
+                    <span>...</span>
+                    <a href="javascript:;" class="peve">下一页 &gt;</a>
+                    <a href="javascript:;" class="peve-all">尾页</a>
+                    <div class="msg">共10页</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/plugins/jquery.js"></script>
+<script src="../js/plugins/echarts.js"></script>
+<script src="../js/plugins/china.js"></script>
+<script src="../js/plugins/select.js"></script>
+<script src="../js/plugins/date/WdatePicker.js"></script>
+<script src="../js/operate-commodity.js"></script>
+</body>
+</html>

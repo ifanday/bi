@@ -1,0 +1,23 @@
+.member-nav{
+	margin:0 auto;
+	padding:0 0 3px 60px;
+	width:$width;
+	height:62px;
+	border-bottom:1px solid #a9a9a9;
+	background-color:#e0e5ef;
+	box-sizing:border-box;
+
+	a{
+		float:left;
+		margin:0 40px;
+		padding:0 12px;		
+		color:#222;
+		height:100%;
+		font:18px/65px "microsoft yahei";
+	}
+
+	.current{
+		color:$titBg;
+		border-bottom:3px solid #3b5999;
+	}
+}

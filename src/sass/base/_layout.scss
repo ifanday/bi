@@ -195,6 +195,10 @@ body{
 	border-bottom-color:$bdbc;
 	border-radius:$bdrs;
 
+	&:first-child{
+		margin-top:0;
+	}
+
 	.sys-title{
 		position:relative;
 		z-index:2;
@@ -337,7 +341,7 @@ body{
 
 	.tit-select-name{
 		padding-left:18px;
-		width:110px;
+		max-width:100px;
 		white-space:nowrap;
 		text-overflow:ellipsis;
 		color:#282828;
@@ -384,6 +388,12 @@ body{
 	border:1px solid $titBg;
 	border-radius:$bdrs;
 
+	td:last-child{
+		img{
+			margin-left:10px;
+		}
+	}
+
 	&.member{
 
 		thead{
@@ -427,9 +437,58 @@ table{
 			border-width:1px 0 0 1px;
 			text-align:center;
 			background-color:$tdBg;
+			overflow:hidden;
+			white-space:nowrap;
+			text-overflow:ellipsis;
 
 			&:first-child{
 				border-left:none;
+			}
+
+			&.scale{
+				position:relative;
+				padding-left:30px;
+				text-align:left;
+
+				.scale-bg{
+					position:absolute;
+					left:$scale-left;
+					right:5%;
+					height:28px;
+					top:50%;
+					margin-top:-14px;
+
+					
+					$scale: 	(first #01a6e7)
+								(second #1fcfae)
+								(third #3876c1)
+								(fourth #fe9f02)
+								(fifth #f35944);
+
+					@mixin color($c) {
+						div{
+							height:100%;
+							background-color:$c;
+						}
+					}
+
+					@each $attr in $scale{
+						$name:	nth($attr,1);
+						$c:		nth($attr,2);
+
+						&.scale-#{$name}{
+							@include color($c);
+						}
+					}
+
+					&.scale-first{
+						div{
+							width:100%;
+						}
+					}
+
+
+				}
 			}
 		}
 	}

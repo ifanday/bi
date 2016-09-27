@@ -1,0 +1,135 @@
+.operate-data{
+
+    &.setting{
+        text-align:center;
+
+        .operate-list{
+            position:relative;
+            width:425px;
+
+            &:first-child{
+                width:590px;
+                padding-bottom:13px;
+                margin-left:80px;
+            }
+        }
+
+        .setting-list{
+            padding:13px 20px 0 0;
+            text-align:center;
+        }
+
+        .setting-item{
+            margin-top:13px;
+            height:47px;
+            font-size:18px;
+            color:$titBg;
+            line-height:47px;
+
+            & > span{
+                float:left;
+                width:60px;
+            }
+
+            .floor{
+                float:left;
+                width:110px;
+            }
+            
+            .text{
+                float: left;
+                font-size:18px;
+                height:100%;
+                width: 200px;
+                color: #4d4d4d;
+                text-align: center;
+                border:none;
+                background-color: #ecf0f8;
+                border-radius: 5px;
+                box-shadow: inset 0 1px 2px 1px rgba(0,0,0,.12);
+            }
+
+            .btn{
+                float:right;
+                width:85px;
+                height:100%;
+                border:none;
+                font-size:18px;
+                color:#fff;
+                border-radius:$bdrs;
+                cursor:pointer;
+
+                &:hover{
+                    opacity:.7;
+                }
+
+                &.change{
+                    margin-right:10px;
+                    background-color:$change;
+                }
+
+                &.del{
+                    background-color:$del;
+                }
+            }
+        }
+
+        .setting-btns{
+            margin-top:13px;
+            padding-right:20px;
+            height:47px;
+            font-size:18px;
+
+            .setting-floor-submit{
+                float:right;
+                width:200px;
+                height:100%;
+                font-size:18px;
+                border:none;
+                color:#fff;
+                cursor:pointer;
+                background-color:$titBg;
+                border-radius:$bdrs;
+            }
+        }
+
+        .setting-date{
+            position:absolute;
+            top:55px;
+            left:0;
+            right:0;
+            bottom:0;
+            padding-top:25%;
+
+
+            a{
+                display:inline-block;
+                padding:10px;
+                margin:1% 2.5%;
+                min-width:25%;
+                font-size:18px;
+            }
+
+            .active{
+                color:#fff;
+                border-radius:$bdrs;
+                background-color:rgba($titBg, .6);
+            }
+
+            .date-btn{
+                position:absolute;
+                left:50%;
+                margin-left:-80px;
+                height:47px;
+                bottom:13px;
+                width:160px;
+                color:#fff;
+                font-size:18px;
+                border:none;
+                cursor:pointer;
+                background-color:$titBg;
+                border-radius:$bdrs;
+            }
+        }
+    }
+}

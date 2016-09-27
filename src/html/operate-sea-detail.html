@@ -1,0 +1,139 @@
+@@include('./include/_header.html', {
+    "title": "运营分析"
+})
+@@include('./include/_nav.html', {
+    "index": "",
+    "shop": "",
+    "member": "",
+    "operate": "current",
+    "setting": "",
+    "help": ""
+})
+@@include('./include/_subnav.html', {
+    "operate": "",
+    "operate-flow": "",
+    "operate-trade": "",
+    "operate-sea": "current",
+    "operate-commodity": ""
+})
+<div class="wrapper">
+    <div class="main">
+        <!-- 按类目 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg operate-min">
+                <div class="tit-name">日搜索排行榜</div>
+            </div>
+            <div class="overlap-cont table-pd">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="12%">排名</th>
+                                <th width="17.5%">二级频道</th>
+                                <th>点击次数</th>
+                                <th width="17%">升降位次</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>手机</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-first"><div></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/up.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>显示器</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-second"><div style="width:80%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/down.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>笔记本</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-third"><div style="width:60%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/up.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>剃须刀</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-fourth"><div style="width:45%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/up.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>天气</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-fifth"><div style="width:30%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/down.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>手机</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-first"><div style="width:25%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/up.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>显示器</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-second"><div style="width:20%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/down.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>笔记本</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-third"><div style="width:17%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/up.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>剃须刀</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-fourth"><div style="width:11%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/up.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>天气</td>
+                                <td class="scale">9999
+                                    <div class="scale-bg scale-fifth"><div style="width:8%"></div></div>
+                                </td>
+                                <td>10%<img src="../images/common/down.png" alt=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="m-pages">
+                    <span class="peve-all">首页</span>
+                    <span class="peve">&lt; 上一页</span>
+                    <span class="current">1</span>
+                    <a href="javascript:;">2</a>
+                    <a href="javascript:;">3</a>
+                    <span>...</span>
+                    <a href="javascript:;" class="peve">下一页 &gt;</a>
+                    <a href="javascript:;" class="peve-all">尾页</a>
+                    <div class="msg">共10页</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./include/_code.html')
+<script src="../js/plugins/select.js"></script>
+<script src="../js/plugins/date/WdatePicker.js"></script>
+@@include('./include/_footer.html')

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>参数设置</title>
+	<link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+<div class="nav">
+	<div class="main">
+		<div class="logo"><a href="index.html"><img src="../images/common/logo.png" alt="logo"></a></div>
+		<div class="links">
+			<a class="" href="index.html">首　页</a>
+			<a class="" href="shop.html">店铺分析</a>
+			<a class="" href="member.html">会员分析</a>
+			<a class="" href="operate.html">运营分析</a>
+			<a class="current" href="setting.html">参数设置</a>
+			<a class="" href="">帮助中心</a>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+    <div class="main">
+        <div class="operate-data setting">
+            <div class="operate-list">
+                <div class="sys-title title-deg"><span>店铺层级设置</span></div>
+                <div class="setting-list">
+                    <div class="setting-item">
+                        <div class="floor">第一层级：</div>
+                        <input type="text" class="text" value="0" disabled>
+                        <span>到</span>
+                        <input class="text" type="text">
+                        <!-- <input class="btn del" type="button" value="删除">
+                        <input class="btn change" type="button" value="修改"> -->
+                    </div>
+                    <div class="setting-item">
+                        <div class="floor">第二层级：</div>
+                        <input type="text" class="text">
+                        <span>到</span>
+                        <input class="text" type="text">
+                    </div>
+                    <div class="setting-item">
+                        <div class="floor">第三层级：</div>
+                        <input type="text" class="text">
+                        <span>到</span>
+                        <input class="text" type="text">
+                    </div>
+                    <div class="setting-item">
+                        <div class="floor">第四层级：</div>
+                        <input type="text" class="text">
+                        <span>到</span>
+                        <input class="text" type="text">
+                    </div>
+                    <div class="setting-item">
+                        <div class="floor">第五层级：</div>
+                        <input type="text" class="text">
+                        <span>到</span>
+                        <input class="text" type="text">
+                    </div>
+                </div>
+                <div class="setting-btns">
+                    <input type="button" value="确定" class="setting-floor-submit">
+                </div>
+            </div>
+            <div class="operate-list">
+                <div class="sys-title title-deg"><span>新会员设置</span></div>
+                <div class="setting-date">
+                    <a class="date-scope active" href="javascript:;">7天之内</a>
+                    <a class="date-scope" href="javascript:;">10天之内</a>
+                    <a class="date-scope" href="javascript:;">15天之内</a>
+                    <a class="date-scope" href="javascript:;">30天之内</a>
+                    <input type="button" value="确定" class="date-btn">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/plugins/jquery.js"></script>
+<script src="../js/setting.js"></script>
+</body>
+</html>

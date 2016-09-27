@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>运营分析</title>
+	<link rel="stylesheet" href="../css/main.min.css">
+</head>
+<body>
+<div class="nav">
+	<div class="main">
+		<div class="logo"><a href="index.html"><img src="../images/common/logo.png" alt="logo"></a></div>
+		<div class="links">
+			<a class="" href="index.html">首　页</a>
+			<a class="" href="shop.html">店铺分析</a>
+			<a class="" href="member.html">会员分析</a>
+			<a class="current" href="operate.html">运营分析</a>
+			<a class="" href="setting.html">参数设置</a>
+			<a class="" href="">帮助中心</a>
+		</div>
+	</div>
+</div>
+<div class="member-nav">
+	<a href="operate.html" class="">运营概况</a>
+	<a href="operate-flow.html" class="">流量构成</a>
+	<a href="operate-trade.html" class="current">交易构成</a>
+	<a href="operate-sea.html" class="">搜索词分析</a>
+	<a href="operate-commodity.html" class="">商品分析</a>
+</div>
+<div class="wrapper">
+    <div class="main">
+        <!-- 支付买家数分布 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg">
+                <div class="tit-name">支付买家数分布</div>
+                <div class="tit-setdata">
+                    <a class="active" href="javascript:;">昨日</a>
+                    <a href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+            </div>
+            <div class="overlap-cont operate-flow">
+                <div class="operate-flow-canvases">
+                    <div class="tit">性别</div>
+                    <div class="items" id="items-sex"></div>
+                </div>
+                <div class="operate-flow-canvases">
+                    <div class="tit">等级</div>
+                    <div class="items" id="items-level"></div>
+                </div>
+                <div class="operate-flow-canvases">
+                    <div class="tit">年龄</div>
+                    <div class="items" id="items-age"></div>
+                </div>
+                <div class="operate-flow-canvases">
+                    <div class="tit">新老会员</div>
+                    <div class="items" id="items-new"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 按地域 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg">
+                <div class="tit-name icon-shop icon-2">按地域</div>
+            </div>
+            <div class="overlap-cont operate-flow-pd">
+                <div class="classify-echarts">
+                    <div id="area-echarts"></div>
+                </div>
+                <div class="table-wrap classify-datalist">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="33%">地域</th>
+                                <th width="33%">数量</th>
+                                <th>占比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>合肥</td>
+                                <td>1234</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>北京</td>
+                                <td>1234</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>上海</td>
+                                <td>1234</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>其他</td>
+                                <td>1234</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>其他</td>
+                                <td>1234</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 终端分析 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg">
+                <div class="tit-name">终端分析</div>
+                <div class="tit-setdata">
+                    <a class="active" href="javascript:;">昨日</a>
+                    <a href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+            </div>
+            <div class="overlap-cont">
+                <div class="operate-flow-canvases small">
+                    <div id="items-from"></div>
+                </div>
+                <div class="table-wrap items-from-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="12%">终端</th>
+                                <th width="16%">访客数</th>
+                                <th width="15%">浏览量</th>
+                                <th width="17%">人均浏览量</th>
+                                <th width="25%">平均停留时间（s）</th>
+                                <th>跳失率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PC端</td>
+                                <td>123456</td>
+                                <td>9999</td>
+                                <td>9999</td>
+                                <td>9999</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>无线端</td>
+                                <td>12345678</td>
+                                <td>9999</td>
+                                <td>9999</td>
+                                <td>9999</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 渠道分析 -->
+        <div class="overlap flow-deal light">
+            <div class="sys-title title-deg">
+                <div class="tit-name">渠道分析</div>
+                <div class="tit-setdata">
+                    <a class="active" href="javascript:;">昨日</a>
+                    <a href="javascript:;">近7日</a>
+                    <a href="javascript:;">近30日</a>
+                </div>
+            </div>
+            <div class="overlap-cont">
+                <div class="items-from-link-wrap">
+                    <div class="operate-flow-canvases small">
+                        <div id="items-from-link"></div>
+                    </div>
+                    <div class="items-from-link-view">
+                        <div id="items-from-link-view"></div>
+                    </div>
+                </div>
+                <div class="link-table-wrap">
+                    <div class="name">详情：</div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="12%">排名</th>
+                                    <th width="13%">渠道</th>
+                                    <th width="13%">访客数</th>
+                                    <th width="15%">浏览量</th>
+                                    <th width="13%">人均浏览量</th>
+                                    <th width="20%">平均停留时间（s）</th>
+                                    <th>跳失率</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>直接访问</td>
+                                    <td>9999</td>
+                                    <td>9999</td>
+                                    <td>9999</td>
+                                    <td>5s</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>搜索引擎</td>
+                                    <td>9999</td>
+                                    <td>9999</td>
+                                    <td>9999</td>
+                                    <td>5s</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>31</td>
+                                    <td>外部链接</td>
+                                    <td>99199</td>
+                                    <td>991399</td>
+                                    <td>993399</td>
+                                    <td>5s</td>
+                                    <td>25%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/plugins/jquery.js"></script>
+<script src="../js/plugins/echarts.js"></script>
+<script src="../js/plugins/china.js"></script>
+<script src="../js/plugins/select.js"></script>
+<script src="../js/plugins/date/WdatePicker.js"></script>
+<script src="../js/operate-flow.js"></script>
+</body>
+</html>

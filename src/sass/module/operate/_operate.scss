@@ -114,7 +114,24 @@
 		background-color:#f5f5f5;
 	}
 }
+#classify-echarts,
+#classify-order-old{
+    width:100%;
+    height:460px;
+}
 
+#classify-order-age{
+    height:270px;
+    border:1px solid $titBg;
+    border-radius:$bdrs;
+}
+#classify-order-sex{
+    float:right;
+    height:360px;
+    width:840px;
+    border:1px solid $titBg;
+    border-radius:$bdrs;
+}
 
 /* 流量构成*/
 .overlap-cont.operate-flow{
@@ -137,14 +154,323 @@
 	.items{
 		height:420px;
 	}
+
+    &.small{
+        width:310px;
+    }
+
+    &.fr{
+        float:right;
+    }
 }
 .operate-flow-pd{
 	padding:40px 35px 40px 0;
 }
+#items-from,
+#items-from-link,
+#commodity-round{
+    height:400px;
+}
+#commodity-round{
+    margin-right:20px;
+}
+.items-from-link-wrap{
+    @extend %clearfix;
+    padding:25px 0;
+}
+.items-from-table{
+    float:right;
+    margin:100px 35px 0 0;
+    width:810px;
+}
+.items-from-link-view{
+    width:812px;
+    height:400px;
+    float:right;
+    margin-right:35px;
+}
+#items-from-link-view,
+#commodity-view{
+    margin-top:75px;
+    height:260px;
+    border-radius:$bdrs;
+}
 
-/* 流量构成*/
+.operate-flow-tablewrap{
+    padding:0 35px;
+}
+.link-table-wrap{
+    padding:0 35px 35px;
 
-/* 流量构成*/
+    .name{
+        padding-left:1rem;
+        margin-bottom:10px;
+        font:16px/25px $yh;
+        color:#1f1f1f;
+    }
+}
+.link-table-wrap{
+    .sys-title .tit-setdata a{
+        padding:0 10px;
+        margin-left:10px;
+        width:auto;
+    }
+}
+.tit-setdata.min{
+    float:right;
+    margin-right:50px;
 
-/* 流量构成*/
+    a{
+        padding:0 10px;
+        margin-left:10px;
+        width:auto;
+    }
+}
+.operate-min{
+    .tit-setdata.min{
+        float:left;
+        margin-right:0;
+
+        a{
+            margin-left:5px;
+        }
+    }
+
+    .tit-date{
+        span{
+            width:20px;
+        }
+        .tit-date-input{
+            width:120px;
+        }
+        .tit-date-button{
+            margin-left:5px;
+            width:105px;
+        }
+    }
+
+    .tit-select-wrap{
+        margin-right:20px;
+
+        .tit-select{
+            margin-left:10px;
+        }
+    }
+}
+.link-table-wrap{
+
+    .tit-select-wrap{
+        width:165px;
+        margin-right:15px;
+
+        .tit-select{
+            margin:8px 0 0;
+        }
+    }
+
+    .sys-title{
+        margin-top:35px;
+        border-radius:$bdrs $bdrs 0 0;
+        border-bottom:none;
+
+        .tit-name{
+            padding:0 0 0 20px;
+            color:#1f1f1f;
+            background-color:transparent;
+        }
+    }
+
+    .table-wrap{
+        &.deg{
+            border-radius:0 0 $bdrs $bdrs;
+        }
+    }
+}
+
+
+
+
+/* 商品分析 */
+#commodity-view{
+    position:relative;
+
+    &:before{
+        content:"趋势";
+        position:absolute;
+        top:-30px;
+        left:20px;
+        font-size:16px;
+    }
+}
+#commodity-order,
+#commodity-pay{
+    height:100%;
+}
+
+
+/* 搜索词分析 */
+.operate-sea-cont{
+    padding:10px 18px 60px 0;
+
+    .operate-sea-list{
+        margin-top:35px;
+
+        @extend %clearfix;
+
+        .side{
+            position:relative;
+            float:left;
+            width:350px;
+            height:270px;
+            
+            .tit{
+                padding-left:40px;
+                color:#606060;
+                font-size:20px;
+            }
+        }
+        .scale-wrap{
+            position:absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            height:225px;
+
+            .scale-item{
+                position:relative;
+                width:90px;
+                height:100%;
+                float:left;
+                margin-left:18px;
+
+                div{
+                    position:absolute;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    padding-top:65px;
+
+                    &:before,
+                    &:after{
+                        position:absolute;
+                        text-align:center;
+                    }
+
+                    &:before{
+                        left:0;
+                        right:0;
+                        bottom:100%;
+                        font-size:16px;
+                        line-height:2;
+                        content:attr(data-rank);
+                    }
+
+                    &:after{
+                        left:50%;
+                        top:24px;
+                        margin-left:-15px;
+                        width:30px;
+                        height:30px;
+                        color:#fff;
+                        font-size:18px;
+                        line-height:30px;
+                        border:1px solid #fff;
+                        border-radius:50%;
+                    }
+                }
+
+                &.first{
+                    div{
+                        top:15%;
+                        background-color:$first-c;
+
+                        &:before{
+                            color:$first-c;
+                        }
+
+                        &:after{
+                            content:"1";
+                        }
+                    }
+                }
+
+                &.second{
+                    div{
+                        top:30%;
+                        background-color:$second-c;
+
+                        &:before{
+                            color:$second-c;
+                        }
+
+                        &:after{
+                            content:"2";
+                        }
+                    }
+                }
+
+                &.third{
+                    div{
+                        top:45%;
+                        background-color:$third-c;
+
+                        &:before{
+                            color:$third-c;
+                        }
+
+                        &:after{
+                            content:"3";
+                        }
+                    }
+                }
+
+                p{
+                    padding:0 10px;
+                    color:#fff;
+                    font-size:16px;
+                    text-align:center;
+                    white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                }
+            }
+        }
+
+        .cont{
+            position:relative;
+            float:right;
+            margin-top:55px;
+            width:785px;
+
+            @extend %clearfix;
+
+            td:last-child{
+                img{
+                    margin-left:10px;
+                }
+            }
+        }
+        .cont-link{
+            position:absolute;
+            right:0;
+            bottom:100%;
+            margin-bottom:10px;
+
+            a{
+                display:inline-block;
+                padding:5px 10px;
+                font-size:14px;
+                line-height:25px;
+                color:#fff;
+                background-color:$titBg;
+                border-radius:$bdrs;
+
+                &:hover{
+                    opacity:.7;
+                }
+            }
+        }
+    }
+}
+
 

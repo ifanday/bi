@@ -1,4 +1,5 @@
 var sexArr = ['#3498db', '#f35944', '#cbcbcb'],
+    fArr = ['#3498db', '#15bfce', '#f35944'],
 	cArr = ['#3498db', '#ffb10b', '#15bfce', '#26c281', '#cbcbcb'],
 	endArr = ['#ffb10b', '#3498db', '#cbcbcb'];
 
@@ -7,7 +8,11 @@ var itemsSex = echarts.init(document.querySelector('#items-sex')),
 	itemsAge = echarts.init(document.querySelector('#items-age')),
 	itemsNew = echarts.init(document.querySelector('#items-new')),
 
-	area = echarts.init(document.querySelector('#area-echarts')),
+    area = echarts.init(document.querySelector('#area-echarts')),
+
+    itemsFrom = echarts.init(document.querySelector('#items-from')),
+    itemsFromLink = echarts.init(document.querySelector('#items-from-link')),
+	itemsFromLinkView = echarts.init(document.querySelector('#items-from-link-view')),
 
 	itemsSexOption = {
         title: {
@@ -584,6 +589,308 @@ var itemsSex = echarts.init(document.querySelector('#items-sex')),
 	    ]
 	},
 
+    itemsFromOption = {
+        title: {
+            subtext: '',
+            x: 'left'
+        },
+        /*tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)",
+            backgroundColor: '#fff', //背景颜色（此时为默认色）
+            //formatter : 'x:{b0}: y:{c0}<br />{b1}: {c1}' ,
+            borderColor: '#666',
+            borderWidth: 1,
+            textStyle: {
+                color: '#666'
+            }
+        },*/
+        legend: {
+            orient: 'horizontal',
+            l: 'center',
+            bottom: '7%',
+            data: ['PC端', '无线端']
+        },
+        color: sexArr,
+        series: [{
+            name: '',
+            type: 'pie',
+            //radius : '55%',
+            radius: ['40%', '90%'],
+            center: ['50%', '45%'],
+            label: {
+                normal: {
+                    show: true,
+                    formatter: "{c}",
+                    position: 'inside',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '16',
+                        // fontWeight: 'bold'
+                    }
+                }
+            },
+            data: [{
+                value: 335,
+                name: 'PC端',
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }, {
+                value: 310,
+                name: '无线端',
+                itemStyle: {
+                    normal: {
+                        //color: '#f35944',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        //color: '#f35944',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+
+            }]
+        }]
+    },
+
+    itemsFromLinkOption = {
+        title: {
+            subtext: '',
+            x: 'left'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{c} <br> ({d}%)",
+            backgroundColor: '#fff', //背景颜色（此时为默认色）
+            //formatter : 'x:{b0}: y:{c0}<br />{b1}: {c1}' ,
+            borderColor: '#666',
+            borderWidth: 1,
+            textStyle: {
+                color: '#666'
+            }
+        },
+        color: fArr,
+        series: [{
+            name: '',
+            type: 'pie',
+            //radius : '55%',
+            radius: ['40%', '90%'],
+            center: ['50%', '50%'],
+            label: {
+                normal: {
+                    show: true,
+                    //formatter: "{c}",
+                    position: 'inside',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '16',
+                        // fontWeight: 'bold'
+                    }
+                }
+            },
+            data: [{
+                value: 335,
+                name: '直接访问',
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }, {
+                value: 310,
+                name: '外部链接',
+                itemStyle: {
+                    normal: {
+                        //color: '#f35944',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        //color: '#f35944',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+
+            }, {
+                value: 234,
+                name: '搜索引擎',
+                itemStyle: {
+                    normal: {
+                        //color: '#f59901',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    emphasis: {
+                        //color: '#f59901',
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+
+            }]
+        }]
+    },
+
+    itemsFromLinkViewOption = {
+        dataZoom: [
+            {
+                type: 'inside',
+                xAxisIndex: 0,
+                start: 0,
+                end: 100,
+                handleStyle: {
+                    opacity: 0
+                },
+                textStyle: {
+                    fontSize: 18
+                }
+            },
+            {
+                type: 'inside',
+                xAxisIndex: 0,
+                start: 10,
+                end: 60
+            }
+        ],
+       
+        tooltip: {
+            trigger: 'axis',
+            backgroundColor: '#fff',//背景颜色（此时为默认色）
+            //formatter : 'x:{b0}: y:{c0}<br />{b1}: {c1}' ,
+            /*
+                a0
+            */
+            //formatter: '2016-{b0}<br />{a0}: {c0}<br />{a1}: {c1}<br />{a2}: {c2}<br />{a3}: {c3}',
+            borderColor : '#ebeef4',
+            borderWidth : 1,
+            textStyle : {
+                color : '#293469'   
+            },
+            padding: 10,
+            axisPointer: {
+                lineStyle: {
+                    color: '#8f90cb',
+                    opacity: 0.4
+                }
+            }
+        },
+        color: fArr,
+        backgroundColor: '#223d76',
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['0','1','2','3', '4', '5', '6', '7', '8', '9', '10'],
+            axisLabel: {
+                textStyle: {
+                    color: '#8f90cb'
+                }   
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#2a3360',
+                    width: 1
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    opacity: 0
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: '#2a3360',
+                    width: 1
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    opacity: 0
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: '#2a3360'
+                }
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#8f90cb'
+                }   
+            }
+        },
+        series: [
+            {
+                name:'直接访问',
+                type:'line',
+                smooth: true,
+                stack: '总量',
+                data:[120, 132, 101, 134, 90, 230, 210,220, 182, 191, 330]
+            },
+            {
+                name:'外部链接',
+                type:'line',
+                smooth: true,
+                stack: '总量',
+                data:[220, 182, 191, 234, 290, 330, 310, 234, 290, 330, 330]
+            },
+            {
+                name:'搜索引擎',
+                type:'line',
+                smooth: true,
+                stack: '总量',
+                data:[150, 232, 234, 290, 330, 310, 201, 290, 330, 310, 330]
+            }
+            
+        ]
+    },
+
+
     num;
 
 itemsSex.setOption(itemsSexOption);
@@ -592,3 +899,6 @@ itemsAge.setOption(itemsAgeOption);
 itemsNew.setOption(itemsNewOption);
 itemsNew.setOption(itemsNewOption);
 area.setOption(areaOption);
+itemsFrom.setOption(itemsFromOption);
+itemsFromLink.setOption(itemsFromLinkOption);
+itemsFromLinkView.setOption(itemsFromLinkViewOption);
