@@ -25,12 +25,12 @@ gulp.task('exportjs', function() {
         .pipe(notify({ message: 'minjs task complete' }));
 });
 gulp.task('sass', function() {
-    return gulp.src('./src/sass/*.scss')
+    return gulp.src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         //.pipe(gulp.dest('./dist/css/')) /**/
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
-        .pipe(gulp.dest('./dist/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
 gulp.task('mincss', function() {
@@ -100,12 +100,12 @@ gulp.task('html', function (){
 });
 gulp.task('watch', function() {
     //return gulp.watch(['./sass/workbench.scss'], ['sass']);
-	gulp.watch('./dist/css/*.css', ['html']); //监控css文件
-    gulp.watch(['./dist/js/*.js', './dist/js/plugins/*.js'], ['html']);  //监控js文件
-    gulp.watch(['./dist/html/*.html'], ['html']);  //监控html文件
-    gulp.watch(['./src/html/*.html', './src/html/*/*.html'], ['fileinclude']);
-    gulp.watch(['./src/js/*.js'], ['exportjs']);
-    gulp.watch(['./src/sass/*.scss', './src/sass/*/*.scss', './src/sass/*/*/*.scss'], ['sass']);
+	gulp.watch('dist/css/*.css', ['html']); //监控css文件
+    gulp.watch(['dist/js/*.js', 'dist/js/plugins/*.js'], ['html']);  //监控js文件
+    gulp.watch(['dist/html/*.html'], ['html']);  //监控html文件
+    gulp.watch(['src/html/*.html', 'src/html/*/*.html'], ['fileinclude']);
+    gulp.watch(['src/js/*.js'], ['exportjs']);
+    gulp.watch(['src/sass/*.scss', 'src/sass/*/*.scss', 'src/sass/*/*/*.scss'], ['sass']);
 });
 // 默认任务
 gulp.task('bi',['connect','watch']);
