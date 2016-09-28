@@ -1,0 +1,54 @@
+.help-tit{
+    padding-left:26px;
+    font-size:22px;
+    color:$titBg;
+}
+.overlap-cont.help{
+    padding:25px 60px 35px 25px;
+    background-color:#f5f5f5;
+    counter-reset:list;
+
+    .help-line{
+        position:relative;
+        margin-top:17px;
+        padding-left:50px;
+        font-size:18px;
+        line-height:33px;
+        color:#222;
+        counter-increment: list;
+
+        @extend %flex;
+
+        span{
+            white-space:pre;
+        }
+
+        &:before{
+            position:absolute;
+            left:0;
+            top:0;
+            width:33px;
+            height:33px;
+            text-align:center;
+            line-height:33px;
+            font-size:18px;
+            color:$titBg;
+            border:1px solid $titBg;
+            border-radius:50%;
+            content:counter(list);
+        }
+        
+        
+
+        span{
+            font-weight:700;
+            color:$titBg;
+        }
+    }
+}
+
+.member-nav.help{
+    a{
+        margin:0 12px;
+    }
+}

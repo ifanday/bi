@@ -105,7 +105,89 @@
     	memberPic.className = '';
     	e.stopPropagation? e.stopPropagation():e.cancelBubble=true;
     }, false);
-    
+
+    // 用户数据状态
+    var userWrap = $('.user-stat'),
+        userTable = $('.table-member'),
+        bdColor = '#f00',
+        userIndex = null;
+
+    userWrap.on('click', '.icon-defalut', function(){
+        var $t = $(this),
+            index = $t.parent().index();
+        
+        if(index == userIndex){
+            return;
+        }
+
+        userIndex = index;
+
+        removeStyle();
+
+        // 设置红框
+        switch(index){
+            case 0:
+                addStyle([1]);
+                break;
+
+            case 1:
+                addStyle([2, 3]);
+                break;
+
+            case 2:
+                addStyle([4, 5]);
+                break;
+        }
+    });
+    // 添加红框样式
+    function addStyle(arr){
+        var $tr = userTable.find('tbody').find('tr'),
+            trLen = $tr.length,
+            flag = arr.length==1? true:false;
+
+        $tr.each(function(i){
+            var $td = $(this).find('td');
+            if(flag){
+                if(i==0){
+                    $td.eq(arr[0]).css(
+                        setArrow('top'));
+                }else if(i==trLen-1){
+
+                    $td.eq(arr[0]).css(
+                        setArrow('bottom'));
+                }
+                $td.eq(arr[0]-1).css(setArrow('right'));
+                $td.eq(arr[0]).css(setArrow('right'));
+            }else{
+
+                for(var _i=0,len=arr.length; _i<len; _i++){
+                    if(i==0){
+                        $td.eq(arr[_i]).css(
+                        setArrow('top'));
+                    }else if(i==trLen-1){
+                        $td.eq(arr[_i]).css(
+                        setArrow('bottom'));
+                    }
+                    $td.eq(arr[len-1]).css(setArrow('right'));                  
+                }
+                $td.eq(arr[0]-1).css(setArrow('right'));
+            }
+        });
+    }
+    // 设置红框方向
+    function setArrow(){
+        var args = arguments, obj = {};
+
+        for(var i=0,v; v=args[i++];){
+            obj['border-'+v+'-color'] = bdColor;
+        }
+        return obj;
+    }
+    // 移除所有红框
+    function removeStyle(){
+        userTable.find('td').removeAttr('style');
+    }
+
 }(window, document);
 
 

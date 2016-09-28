@@ -2,7 +2,7 @@
 
 	&.table-member{
 		border-radius:0;
-		border-width:0 0 1px;
+		border-width:0;
 
 		table{
 			color:$titBg;
@@ -76,6 +76,7 @@
 		th,
 		td{
 			height:85px;
+			border-width:1px;
 
 			&:first-child{
 				background-color:#edf2fd;
@@ -89,10 +90,6 @@
 	}
 }
 
-.user-stat{
-	height:66px;
-}
-
 .member-checkbox{
 	float:left;
 	height:100%;
@@ -103,8 +100,22 @@
 	height:100%;
 }
 .user-stat{
+	position:relative;
+	height:66px;
 	line-height:66px;
 	text-align:center;
+
+	.btn{
+		position:absolute;
+		right:25px;
+		top:15px;
+		width:120px;
+		height:40px;
+		font-size:18px;
+		color:white;
+		background-color:$titBg;
+		border-radius:$bdrs;
+	}
 }
 .member-checkbox,
 .template-checkbox,

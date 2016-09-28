@@ -1,14 +1,15 @@
-var inputs = $('.setting-list').find('.text'),
+var inputs = $('.setting-list').find('.text:not(:first)'),
     inputsBtn = $('.setting-btns').find('.setting-floor-submit'),
+    inputsTips = $('.setting-btns').find('span').eq(0),
     inputsLen = inputs.length,
     dateWrap = $('.setting-date'),
     dateLink = dateWrap.find('a'),
     dateBtn = dateWrap.find('.date-btn'),
 
-
     flag = false,
     dateIndex = null,
     inputArr = [],
+    _arr = [],
     index;
 
 // 获取当前设置天数索引
@@ -41,24 +42,27 @@ $('.setting-date').each(function(){
     });
 });
 
+
 inputs.each(function(i){
     var $t = $(this);
+
+    if($t.val().replace(/\s/, '') == '' && inputsTips.text()==''){
+        inputsTips.html('输入框不能为空');
+    }
+
+    if(i%2==1){
+        var intVal = $t.val(),
+            intVal = intVal==''? intVal:parseInt(intVal);
+        inputArr.push(intVal);
+        _arr.push(intVal);
+    }
+
     $t.focusout(function(){
-
-        if(i==0){
-
-        }else if(i==inputsLen){
-
-        }else if(i%2==0){
-            console.info(i);
-        }else{
-
-        }
+        
     });
 
     $t.on('keydown', function(e){
         var n = e.keyCode;
-        console.info(n);
         if (n > 105 || (n > 57 && n < 96) || n<48 && n!=8) {
             e.preventDefault ? e.preventDefault() : e.returnValue = false;
         }
@@ -70,5 +74,72 @@ inputs.each(function(i){
             var _v = parseInt(this.value);
             this.value = _v == 0 ? '' : _v;
         }
+        var val = parseInt($t.val()),
+            val = val==0? '':val;
+        $t.val(val);
+        if(i%2==0){
+            inputs.eq(i+1).val(val);
+        }else{
+            inputs.eq(i-1).val(val);
+        }
+
+        _arr = [];
+        inputs.each(function(j){
+            if(j%2==1){
+                var intVal = $(this).val(),
+                    intVal = intVal==''? intVal:parseInt(intVal);
+                _arr.push(intVal);
+            }
+        });
     });
+});
+
+function compareArrVal(arr1, arr2){
+    for(var i=0,len=arr1.length;i<len;i++){
+        if(arr1[i] != arr2[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+function reArrSort(arr){
+    for(var i=0,len=arr.length;i<len;i++){
+        var txt = inputs.eq(i*2).parent().find('.floor').text().replace(/[:|：]/, '');
+        if(arr[i]==''){    
+            inputsTips.html('"'+txt+'" 文本框不能为空');
+            inputs[i*2].focus();
+            return false;
+        }
+        if(!!arr[i+1] && arr[i]>=arr[i+1]){
+            inputsTips.html(function(){
+                if(i==0){
+                    return '"'+txt+'" 数值必须小于 '+arr[i];
+                }else{
+                    return '"'+txt+'" 数值必须在 '+arr[i-1]+'~'+arr[i+1]+'之间';
+                }
+            });
+            inputs[i*2].focus();
+            return false;
+        }
+    }
+    inputsTips.html('');
+    return true;
+}
+
+inputsBtn.on('click', function(){
+    // 未改变
+    if(compareArrVal(inputArr, _arr)){
+        reArrSort(_arr);
+        return false;
+    }
+
+    if(reArrSort(_arr)){
+        // 成功通过验证   do...
+
+        // 更新数组
+        inputArr = [].concat(_arr);
+    }else{
+        return false;
+    }
 });
