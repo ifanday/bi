@@ -1,6 +1,11 @@
 $hover: #274585;
 $navH: 70px;
-.nav{	
+.nav{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	z-index:999;
 	height:$navH;
 	background:$titBg;
 	.main{
@@ -11,25 +16,68 @@ $navH: 70px;
 	.logo{
 		position:absolute;
 		top:0;
-		right:100%;
-		margin-right:-13px;
+		left:0;
+		bottom:0; 
+		padding-top:3px;
 	}
 
 	.links{
-		padding-left:60px;
+		position:relative;
+		padding-left:285px;
 		height:100%;
-		font-size:0;
+
+		@extend %clearfix;
+
+		.user-name{
+			position:absolute;
+			right:72px;
+			border:1px solid #fff;
+			font-size:14px;
+			height:23px;
+			max-width:50px;
+			padding:0 10px;
+			color:#fff;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			overflow:hidden;
+		}
 
 		a{
-			display:inline-block;
-			width:170px;
+			float:left;
+			padding:0 30px;
+			height:100%;
 			font:18px/#{$navH} "microsoft yahei";
 			color:#fff;
 			text-align:center;
 
 			&:hover,
 			&.current{
-				background-color:$hover;
+				background:url(../images/common/nav_bg.png) repeat-x;
+			}
+		}
+		
+		.user-name,
+		#logout{
+			border-radius:$bdrs*3;
+			top:23px;
+		}
+
+		#logout{
+			position:absolute;			
+			padding:5px 10px;
+			right:4px;
+			height:15px;
+			font-size:14px;
+			line-height:15px;
+			width:42px;
+			border:none;
+			color:#011c55;
+			cursor:pointer;
+			box-sizing:content-box;
+			background-color:#6e95e9;
+
+			&:hover{
+				color:#fff;
 			}
 		}
 	}

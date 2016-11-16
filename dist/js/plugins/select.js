@@ -34,7 +34,7 @@
 		},
 
 		hasClass: function(o, s){
-		    return new RegExp('\\b'+s+'\\b').test(o.className);
+		    return new RegExp('(?:^|\\s)'+s+'(?=\\s|$)').test(o.className);
 		},
 
 		addClass: function(o, s){
@@ -83,7 +83,6 @@
 				_this.addEvent(ele, 'click', function(e){
 					var target = e.target||e.srcElement;
 					_this.toggleClass(this, _this.toggle);
-
 					if(_this.index!=i&&typeof _this.index=='number'){
 						_this.removeClass(_this.select[_this.index], _this.toggle);
 					}
@@ -118,6 +117,8 @@
 		return new Select(option);
 	}
 
+	window.oS = select();
+
 	// 扩充焦点
 	$('.tit-setdata, .changes-list').each(function(){
 		var $t = $(this);
@@ -130,6 +131,24 @@
 		});
 	});
 
-	window.oS = select();
+	function setScroll(s){
+		var doms = d.querySelectorAll(s);
+
+		if(doms.length){
+			;[].forEach.call(doms, function(v){
+				var oTh = v.querySelector('thead'),
+					oTb	= v.querySelector('tbody');
+				if(oTb.clientHeight<v.clientHeight-oTh.clientHeight){
+					oS.removeClass(v, s.substr(1));
+				}
+			});
+		}
+	}
+
+	w.addEventListener('load', function(){
+		setScroll('.fixed-head');
+	}, false);
+
+	
 
 }(window, document);

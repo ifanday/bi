@@ -1,4 +1,8 @@
 .member-nav{
+	position:fixed;
+	left:0;
+	right:0;
+	z-index:998;
 	margin:0 auto;
 	padding:0 0 3px 60px;
 	width:$width;
@@ -19,5 +23,9 @@
 	.current{
 		color:$titBg;
 		border-bottom:3px solid #3b5999;
+	}
+	
+	& + .wrapper{
+		padding-top:116px;
 	}
 }

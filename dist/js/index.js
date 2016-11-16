@@ -536,7 +536,16 @@ var flowDeal = echarts.init(document.querySelector('#flow-echarts')),
 	    ]
 	};
 
+loading([flowDeal, shopNum, addMember, onlineShop], true)
 
+function loading(arr, flag){
+	arr.forEach(function(v){
+		flag? v.showLoading():v.hideLoading();
+	});
+}
+
+
+loading([flowDeal, shopNum, addMember, onlineShop]);
 // 流量交易趋势
 flowDeal.setOption(flowDealOption);
 

@@ -321,7 +321,7 @@
             position:relative;
             float:left;
             width:350px;
-            height:270px;
+            height:325px;
             
             .tit{
                 padding-left:40px;
@@ -334,7 +334,7 @@
             bottom:0;
             left:0;
             right:0;
-            height:225px;
+            top:45px;
 
             .scale-item{
                 position:relative;
@@ -474,3 +474,47 @@
 }
 
 
+.operate-datalist.table-wrap{
+
+    thead{
+
+        th,
+        td{
+            height:40px;
+            font-size:16px;
+        }
+    }
+
+    tbody{
+        td{
+            height:30px;
+            line-height:30px;
+            font-size:14px;
+
+            $td:    (2 30px) 
+                    (3 35px) 
+                    (4 50px);
+
+            @mixin pdl($width) {
+                padding-left:$width;
+                text-align:left;
+            }
+
+            @each $attr in $td{
+                $name:  nth($attr,1);
+                $dis: nth($attr,2);
+
+                &:nth-of-type(#{$name}){
+                    @include pdl($dis);
+                }
+            }
+
+            &:last-child{
+                img{
+                    float:right;
+                    margin-right:40px;
+                }
+            }
+        }
+    }
+}

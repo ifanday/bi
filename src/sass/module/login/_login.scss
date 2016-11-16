@@ -116,6 +116,8 @@ body{
                 border:none;
                 font-size:14px;
                 background-color:transparent;
+                line-height:40px \9;
+                vertical-align:top;
             }
         }
         .tips{
@@ -174,8 +176,7 @@ body{
     }
 }
 .login-footer{
-    height:124px;
-    padding-top:26px;
+    padding:26px;
     color:#fff;
     text-align:center;
     background-color:#144393;

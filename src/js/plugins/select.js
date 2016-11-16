@@ -130,6 +130,26 @@
 		});
 	});
 
+
+	function setScroll(s){
+		var doms = d.querySelectorAll(s);
+
+		if(doms.length){
+			;[].forEach.call(doms, function(v){
+				var oTh = v.querySelector('thead'),
+					oTb	= v.querySelector('tbody');
+				if(oTb.clientHeight<v.clientHeight-oTh.clientHeight){
+					oS.removeClass(v, s.substr(1));
+				}
+			});
+		}
+	}
+
+	w.addEventListener('load', function(){
+		setScroll('.fixed-head');
+	}, false);
+	
+
 	window.oS = select();
 
 }(window, document);

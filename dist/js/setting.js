@@ -46,10 +46,6 @@ $('.setting-date').each(function(){
 inputs.each(function(i){
     var $t = $(this);
 
-    if($t.val().replace(/\s/, '') == '' && inputsTips.text()==''){
-        inputsTips.html('输入框不能为空');
-    }
-
     if(i%2==1){
         var intVal = $t.val(),
             intVal = intVal==''? intVal:parseInt(intVal);
@@ -71,11 +67,12 @@ inputs.each(function(i){
     $t.on('keyup', function(e){
         var n = e.keyCode;
         if ((n >= 48 && n <= 57) || (n >= 96 && n <= 105)) {
-            var _v = parseInt(this.value);
-            this.value = _v == 0 ? '' : _v;
+            var _v = this.value,
+                _v = _v==''||_v==0||isNaN(_v)? '':parseInt(_v);
+            this.value = _v ;
         }
-        var val = parseInt($t.val()),
-            val = val==0? '':val;
+        var val = $t.val(),
+            val = val==''? '':parseInt(val);
         $t.val(val);
         if(i%2==0){
             inputs.eq(i+1).val(val);
@@ -114,7 +111,7 @@ function reArrSort(arr){
         if(!!arr[i+1] && arr[i]>=arr[i+1]){
             inputsTips.html(function(){
                 if(i==0){
-                    return '"'+txt+'" 数值必须小于 '+arr[i];
+                    return '"'+txt+'" 数值必须小于 '+arr[i+1];
                 }else{
                     return '"'+txt+'" 数值必须在 '+arr[i-1]+'~'+arr[i+1]+'之间';
                 }

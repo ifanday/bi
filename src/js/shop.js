@@ -198,12 +198,17 @@ var classify = echarts.init(document.querySelector('#classify-echarts')),
 	            roam: false,
 	            label: {
 	                normal: {
-	                    show: true
+	                    show: false
 	                },
 	                emphasis: {
 	                    show: true
 	                }
 	            },
+                itemStyle: {
+                    normal: {
+                        borderWidth: 0
+                    }  
+                },
 	            data:[
 	                {name: '北京',value: 80 },
 	                {name: '天津',value: 80 },
